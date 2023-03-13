@@ -13,6 +13,8 @@ import {
   faBell,
   faEye,
   faEyeSlash,
+  faThumbsDown,
+  faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -23,7 +25,9 @@ library.add(
   faUser,
   faBell,
   faEye,
-  faEyeSlash
+  faEyeSlash,
+  faThumbsUp,
+  faThumbsDown
 );
 
 createApp(App)

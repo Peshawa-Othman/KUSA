@@ -8,7 +8,7 @@
     <div style="margin-top: 200px; margin-bottom: 120px" class="main-content">
       <!-- Header -->
       <!-- Page content -->
-      <div class="container-fluid mt--7">
+      <div style="background-color: #10161c" class="container-fluid mt--7">
         <div class="row">
           <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
             <div style="background: bottom" class="card card-profile shadow">
@@ -25,7 +25,7 @@
                 </div>
               </div>
               <div
-                style="background: bottom"
+                style="background: #10161c"
                 class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"
               >
                 <div
@@ -101,9 +101,9 @@
               </div>
             </div>
           </div>
-          <div style="background: bottom" class="col-xl-8 order-xl-1">
-            <div style="background: bottom" class="card bg-secondary shadow">
-              <div style="background: bottom" class="card-body">
+          <div style="background: #10161c" class="col-xl-8 order-xl-1">
+            <div style="background: #10161c" class="card bg-secondary shadow">
+              <div style="background: #10161c" class="card-body">
                 <form>
                   <div class="product-card">
                     <!-- <div class="badge">Hot</div> -->
@@ -126,43 +126,69 @@
                         "
                       >
                         <img
-                          style="
-                            position: relative;
-                            width: 50px;
-                            float: left;
-                            bottom: 26px;
-                            right: 24px;
-                            height: 50px;
-                            border-radius: 58px;
-                            cursor: pointer;
-                          "
+                          id="imageperson"
                           src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
                           alt=""
                         />
-                        <p
-                          style="
-                            position: relative;
-                            bottom: 10px;
-                            right: 15px;
-                            color: blueviolet;
-                          "
-                        >
-                          Peshawa Othman Rashid
-                        </p>
+                        <p id="person_name">Peshawa Othman Rashid</p>
                       </div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Vero, possimus nostrum!
                       </p>
+
                       <!-- <div class="product-bottom-details">
-                        <div class="product-price">
-                          <small>$96.00</small>$230.99
-                        </div>
+                        <div class="product-price"></div>
                         <div class="product-links">
                           <a href=""><i class="fa fa-heart"></i></a>
                           <a href=""><i class="fa fa-shopping-cart"></i></a>
                         </div>
                       </div> -->
+                      <div id="div_icon1" style="margin-right: 35px">
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-up"
+                        /><span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >45</span
+                        >
+                      </div>
+                      <div id="div_icon2" style="margin-left: 35px">
+                        <span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >55</span
+                        >
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-down"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div class="product-card">
@@ -186,43 +212,69 @@
                         "
                       >
                         <img
-                          style="
-                            position: relative;
-                            width: 50px;
-                            float: left;
-                            bottom: 26px;
-                            right: 24px;
-                            height: 50px;
-                            border-radius: 58px;
-                            cursor: pointer;
-                          "
+                          id="imageperson"
                           src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
                           alt=""
                         />
-                        <p
-                          style="
-                            position: relative;
-                            bottom: 10px;
-                            right: 15px;
-                            color: blueviolet;
-                          "
-                        >
-                          Peshawa Othman Rashid
-                        </p>
+                        <p id="person_name">Peshawa Othman Rashid</p>
                       </div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Vero, possimus nostrum!
                       </p>
+
                       <!-- <div class="product-bottom-details">
-                        <div class="product-price">
-                          <small>$96.00</small>$230.99
-                        </div>
+                        <div class="product-price"></div>
                         <div class="product-links">
                           <a href=""><i class="fa fa-heart"></i></a>
                           <a href=""><i class="fa fa-shopping-cart"></i></a>
                         </div>
                       </div> -->
+                      <div id="div_icon1" style="margin-right: 35px">
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-up"
+                        /><span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >45</span
+                        >
+                      </div>
+                      <div id="div_icon2" style="margin-left: 35px">
+                        <span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >55</span
+                        >
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-down"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div class="product-card">
@@ -246,43 +298,69 @@
                         "
                       >
                         <img
-                          style="
-                            position: relative;
-                            width: 50px;
-                            float: left;
-                            bottom: 26px;
-                            right: 24px;
-                            height: 50px;
-                            border-radius: 58px;
-                            cursor: pointer;
-                          "
+                          id="imageperson"
                           src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
                           alt=""
                         />
-                        <p
-                          style="
-                            position: relative;
-                            bottom: 10px;
-                            right: 15px;
-                            color: blueviolet;
-                          "
-                        >
-                          Peshawa Othman Rashid
-                        </p>
+                        <p id="person_name">Peshawa Othman Rashid</p>
                       </div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Vero, possimus nostrum!
                       </p>
+
                       <!-- <div class="product-bottom-details">
-                        <div class="product-price">
-                          <small>$96.00</small>$230.99
-                        </div>
+                        <div class="product-price"></div>
                         <div class="product-links">
                           <a href=""><i class="fa fa-heart"></i></a>
                           <a href=""><i class="fa fa-shopping-cart"></i></a>
                         </div>
                       </div> -->
+                      <div id="div_icon1" style="margin-right: 35px">
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-up"
+                        /><span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >45</span
+                        >
+                      </div>
+                      <div id="div_icon2" style="margin-left: 35px">
+                        <span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >55</span
+                        >
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-down"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div class="product-card">
@@ -306,43 +384,69 @@
                         "
                       >
                         <img
-                          style="
-                            position: relative;
-                            width: 50px;
-                            float: left;
-                            bottom: 26px;
-                            right: 24px;
-                            height: 50px;
-                            border-radius: 58px;
-                            cursor: pointer;
-                          "
+                          id="imageperson"
                           src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
                           alt=""
                         />
-                        <p
-                          style="
-                            position: relative;
-                            bottom: 10px;
-                            right: 15px;
-                            color: blueviolet;
-                          "
-                        >
-                          Peshawa Othman Rashid
-                        </p>
+                        <p id="person_name">Peshawa Othman Rashid</p>
                       </div>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Vero, possimus nostrum!
                       </p>
+
                       <!-- <div class="product-bottom-details">
-                        <div class="product-price">
-                          <small>$96.00</small>$230.99
-                        </div>
+                        <div class="product-price"></div>
                         <div class="product-links">
                           <a href=""><i class="fa fa-heart"></i></a>
                           <a href=""><i class="fa fa-shopping-cart"></i></a>
                         </div>
                       </div> -->
+                      <div id="div_icon1" style="margin-right: 35px">
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-up"
+                        /><span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: left;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >45</span
+                        >
+                      </div>
+                      <div id="div_icon2" style="margin-left: 35px">
+                        <span
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            bottom: 4px;
+                            left: 4px;
+                          "
+                          >55</span
+                        >
+                        <font-awesome-icon
+                          style="
+                            margin: 0;
+                            padding: 0;
+                            position: relative;
+                            float: right;
+                            cursor: pointer;
+                          "
+                          icon="fa-solid fa-thumbs-down"
+                        />
+                      </div>
                     </div>
                   </div>
                 </form>
@@ -859,7 +963,7 @@ a > code {
   color: #8898aa;
   border: 1px solid #cad1d7;
   border-radius: 0.375rem;
-  background-color: #fff;
+  // background-color: #fff;
   background-clip: padding-box;
   box-shadow: none;
 }
@@ -879,7 +983,7 @@ a > code {
   color: #8898aa;
   border-color: rgba(50, 151, 211, 0.25);
   outline: 0;
-  background-color: #fff;
+  // background-color: #fff;
   box-shadow: none, none;
 }
 
@@ -901,7 +1005,7 @@ a > code {
 .form-control:disabled,
 .form-control[readonly] {
   opacity: 1;
-  background-color: #e9ecef;
+  // background-color: #e9ecef;
 }
 
 textarea.form-control {
@@ -1127,7 +1231,7 @@ textarea.form-control {
   color: #525f7f;
   border: 0 solid rgba(0, 0, 0, 0.15);
   border-radius: 0.4375rem;
-  background-color: #fff;
+  // background-color: #fff;
   background-clip: padding-box;
   box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1),
     0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -2521,17 +2625,67 @@ a {
 .product-links a:hover {
   color: #fbb72c;
 }
+#imageperson {
+  position: relative;
+  width: 50px;
+  float: left;
+  bottom: 26px;
+  right: 24px;
+  height: 50px;
+  border-radius: 58px;
+  cursor: pointer;
+}
+#person_name {
+  position: relative;
+  bottom: 10px;
+  right: 15px;
+  color: blueviolet;
+}
 @media (max-width: 500px) {
+  #div_icon1 {
+    position: relative;
+    left: 30px;
+  }
+  #div_icon2 {
+    position: relative;
+    right: 30px;
+  }
+  .product-details p {
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+    margin-left: 6px;
+    text-align: left;
+  }
+  #person_name {
+    font-size: 15px;
+    position: relative;
+    bottom: -6px;
+    right: -9px;
+    color: blueviolet;
+  }
+  #imageperson {
+    position: relative;
+    margin: 2px;
+    width: 30px;
+    float: left;
+    bottom: 0px;
+    right: -3px;
+    height: 30px;
+    border-radius: 58px;
+    cursor: pointer;
+  }
   .product-tumb {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 170px;
+    height: 255px;
     padding: 0px;
     background: #f0f0f0;
   }
   .product-card {
-    width: 200px;
+    width: 255px;
     position: relative;
     box-shadow: 0 2px 7px #dfdfdf;
     margin: 50px auto;
