@@ -19,7 +19,354 @@
     possimus nostrum! consectetur adipisicing elit.
   </p>
   <div id="zoom_person_div"></div>
-
+  <div id="show_following">
+    <div class="toast" id="toast">
+      <div class="toast-body"></div>
+      <button @click="no_bottons" id="no">NO</button>
+      <button id="yes">YES</button>
+    </div>
+    <div id="div_toast"></div>
+    <div id="div_search">
+      <font-awesome-icon
+        @click="icon_close"
+        id="icon_close"
+        icon="fa-solid fa-xmark"
+      />
+      <input id="input_search" type="search" placeholder="Username" />
+      <font-awesome-icon id="icon_search" icon="fa-solid fa-magnifying-glass" />
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button @click="followeds" id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+  </div>
+  <!-- followers //////////////////////////////-->
+  <!-- followers //////////////////////////////-->
+  <!-- followers //////////////////////////////-->
+  <div id="show_followers">
+    <div class="toast2" id="toast2">
+      <div class="toast-body2"></div>
+      <button @click="no_bottons2" id="no2">NO</button>
+      <button id="yes2">YES</button>
+    </div>
+    <div id="div_toast2"></div>
+    <div id="div_search">
+      <font-awesome-icon
+        @click="icon_close"
+        id="icon_close"
+        icon="fa-solid fa-xmark"
+      />
+      <input id="input_search" type="search" placeholder="Username" />
+      <font-awesome-icon id="icon_search" icon="fa-solid fa-magnifying-glass" />
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button @click="followers" id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+  </div>
+  <!-- Followers /////////////////////////////////////////////////////// -->
+  <!-- Followers /////////////////////////////////////////////////////// -->
+  <!-- Followers /////////////////////////////////////////////////////// -->
   <body>
     <div style="margin-top: 200px; margin-bottom: 120px" class="main-content">
       <!-- Header -->
@@ -27,58 +374,101 @@
       <div style="background-color: #10161c" class="container-fluid mt--7">
         <div class="row">
           <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-            <div
-              style="background: bottom"
-              id="card_shadow_person"
-              class="card card-profile shadow"
-            >
-              <div id="div_search">
-                <!-- <font-awesome-icon
-                  @click="icon_close"
-                  id="icon_close"
-                  icon="fa-solid fa-xmark"
-                /> -->
-                <input
-                  id="input_search"
-                  type="search"
-                  placeholder="@username"
-                />
-                <font-awesome-icon
-                  id="icon_search"
-                  icon="fa-solid fa-magnifying-glass"
-                />
+            <div style="background: bottom" class="card card-profile shadow">
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                  <div class="card-profile-image">
+                    <a href="#">
+                      <img
+                        @click="zoom_person_image"
+                        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+                        class="rounded-circle"
+                      />
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div v-for="item in test" :key="item">
+              <div
+                style="background: #10161c"
+                class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4"
+              >
                 <div
-                  style="
-                    margin-top: 45px;
-                    width: 100%;
-                    height: 100px;
-                    background: #132020;
-                    position: relative;
-                    top: -48px;
-                    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-                      0 0 10px rgb(255 255 255 / 39%);
-                  "
+                  style="margin-right: 12px"
+                  class="d-flex justify-content-between"
                 >
-                  <img
-                    id="following_person_image"
-                    :src="item.image"
-                    alt="peshawa"
-                  />
-                  <label id="following_person_name" for="">{{
-                    item.name
-                  }}</label>
-                  <label id="following_person_language" for=""
-                    >Language: {{ item.language }}</label
-                  >
-                  <label id="following_person_location" for=""
-                    >Location: {{ item.location }}</label
-                  >
-                  <button @click="followeds" id="followed_button">
-                    Followed
-                  </button>
-                  <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+                  <a href="#" class="btn btn-sm btn-info mr-4">edit profile</a>
+                  <a href="#" class="btn btn-sm btn-default float-right"
+                    >add post
+                  </a>
+                </div>
+              </div>
+              <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card-profile-stats d-flex justify-content-center mt-md-6"
+                    >
+                      <div
+                        @click="show_following"
+                        class="following"
+                        style="cursor: pointer"
+                      >
+                        <span class="description">Following</span>
+                        <span style="color: aqua" class="heading">45</span>
+                      </div>
+                      <div>
+                        <span class="heading"></span>
+                        <span class="description"></span>
+                      </div>
+                      <div
+                        @click="show_followers"
+                        class="following"
+                        style="cursor: pointer"
+                      >
+                        <span class="description">Followers</span>
+                        <span style="color: aqua" class="heading">55</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card-profile-stats d-flex justify-content-center mt-md-5"
+                    >
+                      <div>
+                        <span style="color: aqua" class="heading">6</span>
+                        <span class="description">Day</span>
+                      </div>
+                      <div>
+                        <span style="color: aqua" class="heading">1</span>
+                        <span class="description">Month</span>
+                      </div>
+                      <div>
+                        <span style="color: aqua" class="heading">2000</span>
+                        <span class="description">Year</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <h3 style="color: aqua">Peshawa Othman Rashid</h3>
+                  <div style="color: aqua" class="h5 font-weight-300">
+                    <i class="ni location_pin mr-2"></i>@Peshawa_12345
+                  </div>
+                  <div style="color: aqua">
+                    <i class="ni education_hat mr-2"></i>Country: Kurdistan
+                  </div>
+                  <div style="color: aqua">
+                    <i class="ni education_hat mr-2"></i>Language: kurdy
+                  </div>
+                  <hr class="my-4" />
+                  <p style="color: aqua">
+                    Ryan — the name taken by Melbourne-raised, Brooklyn-based
+                    Nick Murphy — writes, performs and records all of his own
+                    music.
+                  </p>
+                  <a style="color: #898fb4" href="#">Follows</a>
                 </div>
               </div>
             </div>
@@ -103,7 +493,7 @@
                         style="
                           position: relative;
                           width: -webkit-fill-available;
-                          height: 25px;
+                          height: 28px;
                           /* background: black; */
                           display: flex;
                         "
@@ -192,7 +582,7 @@
                         style="
                           position: relative;
                           width: -webkit-fill-available;
-                          height: 25px;
+                          height: 28px;
                           /* background: black; */
                           display: flex;
                         "
@@ -279,7 +669,7 @@
                         style="
                           position: relative;
                           width: -webkit-fill-available;
-                          height: 25px;
+                          height: 28px;
                           /* background: black; */
                           display: flex;
                         "
@@ -366,7 +756,7 @@
                         style="
                           position: relative;
                           width: -webkit-fill-available;
-                          height: 25px;
+                          height: 28px;
                           /* background: black; */
                           display: flex;
                         "
@@ -451,64 +841,6 @@
 export default {
   setup() {
     var toast = "";
-    const test = [
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-      },
-    ];
     function zoom_person_image() {
       document.getElementById("zoom_person_image").style.display = "block";
       document.getElementById("zoom_person_div").style.display = "block";
@@ -575,7 +907,6 @@ export default {
       show_followers,
       followers,
       no_bottons2,
-      test,
     };
   },
 };
@@ -584,22 +915,20 @@ export default {
 <style scoped lang="scss">
 #input_search {
   position: relative;
-  width: -webkit-fill-available;
+  width: 208px;
   top: 5px;
-  float: left;
+  // float: left;
   margin-left: 0px;
-  margin-right: 40px;
   padding: 5px;
   outline: 0px;
   border-radius: 6px;
 }
 #input_search:focus {
   position: relative;
-  width: -webkit-fill-available;
+  width: 208px;
   top: 5px;
-  float: left;
+  // float: left;
   margin-left: 0px;
-  margin-right: 40px;
   padding: 5px;
   outline: 0px;
   border-radius: 6px;
@@ -632,56 +961,32 @@ export default {
   border-radius: 55px;
 }
 #following_person_name {
-  // width: -moz-fit-content;
   width: fit-content;
   position: relative;
   float: left;
-  font-size: 13px;
+  font-size: 10px;
   color: aqua;
-  bottom: -12px;
-  // font-size: 12px;
-  // font-weight: bolder;
+  bottom: -25px;
+  font-weight: bolder;
 }
 #following_person_language {
   width: fit-content;
   position: relative;
   float: left;
-  font-size: 13px;
+  font-size: 10px;
   color: aqua;
-  // font-weight: bolder;
-  top: 41px;
-  right: 143px;
+  font-weight: bolder;
+  top: 47px;
+  right: 118px;
 }
 #following_person_location {
-  width: -moz-fit-content;
   width: fit-content;
   position: relative;
   float: left;
-  font-size: 13px;
+  font-size: 10px;
   color: aqua;
-  /* font-weight: bolder; */
-  top: 43px;
-  right: -1px;
-}
-#card_shadow_person {
-  height: 700px;
-  overflow-y: scroll;
-}
-@media (max-width: 1120px) {
-  #following_person_location {
-    width: fit-content;
-    position: relative;
-    float: left;
-    font-size: 13px;
-    color: aqua;
-    // font-weight: bolder;
-    top: 70px;
-    right: 238px;
-  }
-  #card_shadow_person {
-    height: 300px;
-    overflow-y: scroll;
-  }
+  font-weight: bolder;
+  top: 50px;
 }
 #followed_button {
   width: fit-content;
@@ -689,7 +994,7 @@ export default {
   float: right;
   font-size: 12px;
   margin-right: 3px;
-  bottom: -9px;
+  bottom: -23px;
   padding: 2px;
   background: cornflowerblue;
   color: aqua;
@@ -706,23 +1011,12 @@ export default {
   float: right;
   font-size: 12px;
   margin-right: 3px;
-  bottom: -7px;
+  bottom: -20px;
   padding: 2px;
   background: #7eb200;
   color: black;
   outline: none;
   border: none;
-}
-@media (max-width: 496px) {
-  #following_person_location {
-    width: fit-content;
-    position: relative;
-    float: left;
-    font-size: 13px;
-    color: aqua;
-    top: 42px;
-    right: -1px;
-  }
 }
 #zoom_person_image {
   display: none;
@@ -789,16 +1083,16 @@ export default {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgb(255 255 255 / 46%);
   overflow-y: scroll;
 }
-#card_shadow_person::-webkit-scrollbar {
+#show_following::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-#card_shadow_person::-webkit-scrollbar-track {
+#show_following::-webkit-scrollbar-track {
   background-color: #0000007c;
 }
 
-#card_shadow_person::-webkit-scrollbar-thumb {
+#show_following::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 5px;
 }
@@ -843,10 +1137,9 @@ export default {
   cursor: pointer;
   padding: 4px;
   position: relative;
-  float: right;
   border-radius: 5px;
-  top: -29px;
-  left: -4px;
+  top: 14px;
+  left: 3px;
 }
 #icon_search:hover {
   font-size: 22px;
@@ -2929,7 +3222,7 @@ a {
   text-decoration: none;
 }
 .product-card {
-  width: 228px;
+  width: 299px;
   position: relative;
   box-shadow: 0 2px 7px #dfdfdf;
   margin: 50px auto;
@@ -2954,7 +3247,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 228px;
+  height: 300px;
   padding: 0px;
   background: #f0f0f0;
   cursor: pointer;
@@ -2966,7 +3259,7 @@ a {
 }
 
 .product-details {
-  padding: 10px;
+  padding: 30px;
 }
 
 .product-catagory {
@@ -2995,10 +3288,10 @@ a {
 .product-details p {
   width: -webkit-fill-available;
   height: 128px;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 22px;
   margin-bottom: 18px;
-  color: #000000;
+  color: #999;
   text-align: left;
   margin-top: 5px;
 }
@@ -3046,30 +3339,29 @@ a {
 #imageperson {
   display: flex;
   position: relative;
-  width: 35px;
+  width: 50px;
   float: left;
-  bottom: 7px;
-  right: 5px;
-  height: 35px;
+  bottom: 26px;
+  right: 24px;
+  height: 50px;
   border-radius: 58px;
   cursor: pointer;
 }
 #imageperson:hover {
   display: flex;
   position: relative;
-  width: 37px;
+  width: 52px;
   float: left;
-  bottom: 7px;
-  right: 5px;
-  height: 37px;
+  bottom: 26px;
+  right: 24px;
+  height: 52px;
   border-radius: 58px;
   cursor: pointer;
 }
 #person_name {
   position: relative;
-  bottom: 3px;
-  right: 0px;
-  font-size: 11px;
+  bottom: 10px;
+  right: 15px;
   color: blueviolet;
 }
 @media (max-width: 500px) {
@@ -3082,21 +3374,19 @@ a {
     right: 30px;
   }
   .product-details p {
-    width: -webkit-fill-available;
-    height: 128px;
-    font-size: 12px;
-    line-height: 18px;
-    margin-bottom: 5px;
-    color: #000000;
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+    margin-left: 6px;
     text-align: left;
-    margin-top: 10px;
-    margin-left: 8px;
+    margin-top: 5px;
   }
   #person_name {
     font-size: 15px;
     position: relative;
-    bottom: -1px;
-    right: -3px;
+    bottom: -6px;
+    right: -9px;
     color: blueviolet;
   }
   #imageperson {
@@ -3113,11 +3403,11 @@ a {
   #imageperson:hover {
     position: relative;
     margin: 2px;
-    width: 35px;
+    width: 32px;
     float: left;
     bottom: 0px;
     right: -3px;
-    height: 35px;
+    height: 32px;
     border-radius: 58px;
     cursor: pointer;
   }

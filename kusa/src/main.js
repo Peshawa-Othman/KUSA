@@ -15,6 +15,10 @@ import {
   faEyeSlash,
   faThumbsDown,
   faThumbsUp,
+  faMagnifyingGlass,
+  faXmark,
+  faImage,
+  faHourglassStart,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -27,7 +31,11 @@ library.add(
   faEye,
   faEyeSlash,
   faThumbsUp,
-  faThumbsDown
+  faThumbsDown,
+  faMagnifyingGlass,
+  faXmark,
+  faImage,
+  faHourglassStart
 );
 
 createApp(App)

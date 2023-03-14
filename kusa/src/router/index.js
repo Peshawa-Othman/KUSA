@@ -7,6 +7,8 @@ import MicrophoneView from "../views/MicrophoneView.vue";
 import VideoView from "../views/VideoView.vue";
 import BellView from "../views/BellView.vue";
 import UserView from "../views/UserView.vue";
+import UserVisit from "../views/UserVisit.vue";
+import EditProfile from "../views/EditProfile.vue";
 
 const routes = [
   {
@@ -33,6 +35,16 @@ const routes = [
     path: "/user",
     name: "User",
     component: UserView,
+  },
+  {
+    path: "/edit_profile",
+    name: "Edit_profile",
+    component: EditProfile,
+  },
+  {
+    path: "/uservisit",
+    name: "User_visit",
+    component: UserVisit,
   },
   {
     path: "/",

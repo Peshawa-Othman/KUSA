@@ -9,11 +9,75 @@
       <div class="container-fluid mt--7">
         <div class="row">
           <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
-            <img
-              style="width: 300px"
-              src="../assets/images/registration.png"
-              alt="registration"
-            />
+            <div style="background: bottom" class="card card-profile shadow">
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                  <div class="card-profile-image">
+                    <a href="#">
+                      <img
+                        @click="zoom_person_image"
+                        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+                        class="rounded-circle"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body pt-0 pt-md-4">
+                <div class="row">
+                  <div class="col">
+                    <div
+                      class="card-profile-stats d-flex justify-content-center mt-md-6"
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  style="position: relative; top: 78px; margin-bottom: 100px"
+                  class="row"
+                >
+                  <div class="col">
+                    <div
+                      class="card-profile-stats d-flex justify-content-center mt-md-5"
+                    >
+                      <div>
+                        <span style="color: aqua" class="heading">6</span>
+                        <span class="description">Day</span>
+                      </div>
+                      <div>
+                        <span style="color: aqua" class="heading">1</span>
+                        <span class="description">Month</span>
+                      </div>
+                      <div>
+                        <span style="color: aqua" class="heading">2000</span>
+                        <span class="description">Year</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <h3 style="color: aqua">Peshawa Othman Rashid</h3>
+                  <!-- <div class="h5 font-weight-300">
+                    <i class="ni location_pin mr-2"></i>Kurdistan, kurdy
+                  </div> -->
+                  <div style="color: aqua">
+                    <i class="ni education_hat mr-2"></i>Country: Kurdistan
+                  </div>
+                  <div style="color: aqua">
+                    <i class="ni education_hat mr-2"></i>Language: kurdy
+                  </div>
+                  <hr class="my-4" />
+                  <p style="color: aqua">
+                    Ryan — the name taken by Melbourne-raised, Brooklyn-based
+                    Nick Murphy — writes, performs and records all of his own
+                    music.Ryan — the name taken by Melbourne-raised,
+                    Brooklyn-based Nick Murphy — writes, performs and records
+                    all of his own music.
+                  </p>
+                  <!-- <a style="color: #898fb4" href="#">Show more</a> -->
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-xl-8 order-xl-1">
             <div class="card bg-secondary shadow">
@@ -28,7 +92,7 @@
                     "
                     class="heading-small text-muted mb-4"
                   >
-                    REGISTER
+                    EDIT PROFILE
                   </h6>
                   <div class="pl-lg-4">
                     <div class="row">
@@ -49,69 +113,46 @@
                       <div class="col-lg-6">
                         <div class="form-group">
                           <label class="form-control-label" for="input-email"
-                            >Email address</label
+                            >Image</label
                           >
-                          <input
-                            required
-                            type="email"
+                          <div
+                            style="background: #322424; border-radius: 5px"
                             id="input-email"
-                            class="form-control form-control-alternative"
-                            placeholder="Enter email address"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="form-group focused">
-                          <label
-                            class="form-control-label"
-                            for="input-first-name"
-                            >Password</label
                           >
-                          <input
-                            required
-                            type="password"
-                            id="input-first-name"
-                            class="form-control form-control-alternative"
-                            placeholder="Enter password"
-                          />
-                          <font-awesome-icon
-                            @click="fa_eye_password"
-                            id="fa-eye-password"
-                            icon="fa-solid fa-eye"
-                          />
-                          <font-awesome-icon
-                            @click="fa_eye_slash_password"
-                            id="fa-eye-slash-password"
-                            icon="fa-solid fa-eye-slash"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group focused">
-                          <label
-                            class="form-control-label"
-                            for="input-last-name"
-                            >Repeat password</label
-                          >
-                          <input
-                            required
-                            type="password"
-                            id="input-last-name"
-                            class="form-control form-control-alternative"
-                            placeholder="Enter repeat password"
-                          />
-                          <font-awesome-icon
-                            @click="fa_eye_repied_password"
-                            id="fa-eye-repied-password"
-                            icon="fa-solid fa-eye"
-                          />
-                          <font-awesome-icon
-                            @click="fa_eye_slash_repied_password"
-                            id="fa-eye-slash-repied-password"
-                            icon="fa-solid fa-eye-slash"
-                          />
+                            <span
+                              style="
+                                position: absolute;
+                                top: 42px;
+                                left: 25px;
+                                color: aqua;
+                                font-size: 15px;
+                                user-select: none;
+                                pointer-events: none;
+                                cursor: pointer;
+                              "
+                              >Image</span
+                            >
+
+                            <input
+                              style="opacity: 0; cursor: pointer"
+                              required
+                              type="file"
+                              id="input-email"
+                              class="form-control form-control-alternative"
+                            />
+                            <font-awesome-icon
+                              style="
+                                position: relative;
+                                float: right;
+                                bottom: 39px;
+                                right: 19px;
+                                font-size: xx-large;
+                                user-select: none;
+                                pointer-events: none;
+                              "
+                              icon="fa-solid fa-image"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -162,35 +203,163 @@
                       </div>
                     </div>
                   </div>
-                  <div style="margin: 12px" class="select">
+                  <div
+                    style="
+                      position: relative;
+                      float: right;
+                      margin-bottom: 25px;
+                    "
+                    class="select"
+                  >
                     <select required>
                       <option v-for="item in country" :key="item">
                         {{ item }}
                       </option>
                     </select>
                   </div>
+                  <div
+                    style="
+                      position: relative;
+                      float: left;
+                      left: 26px;
+                      margin-bottom: 25px;
+                    "
+                    class="select"
+                  >
+                    <select required>
+                      <option v-for="item in language" :key="item">
+                        {{ item }}
+                      </option>
+                    </select>
+                  </div>
+                  <!-- <h6 class="heading-small text-muted mb-4">About me</h6> -->
+                  <div class="pl-lg-4">
+                    <div class="form-group focused">
+                      <!-- <label>About Me</label> -->
+                      <textarea
+                        rows="4"
+                        class="form-control form-control-alternative"
+                        placeholder="A few words about you ..."
+                      ></textarea>
+                    </div>
+                  </div>
+                  <router-link :to="{ name: 'Home' }">
+                    <button style="--clr: #39ff14; width: fit-content">
+                      <span>EDIT PROFILE</span><i></i>
+                    </button>
+                  </router-link>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <body>
+    <div style="margin-top: 170px; margin-bottom: 90px" class="main-content">
+      <div class="container-fluid mt--7">
+        <div class="row">
+          <!-- <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+            <img
+              style="width: 300px"
+              src="../assets/images/registration.png"
+              alt="registration"
+            />
+          </div> -->
+          <div class="col-xl-8 order-xl-1">
+            <div class="card bg-secondary shadow">
+              <div style="background: #10161c" class="card-body">
+                <form>
+                  <h6
+                    style="
+                      width: fit-content;
+                      position: relative;
+                      left: 50%;
+                      transform: translate(-50%, 0px);
+                    "
+                    class="heading-small text-muted mb-4"
+                  >
+                    UPDATE PASSWORD
+                  </h6>
+                  <div class="pl-lg-4">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="form-group focused">
+                          <label
+                            class="form-control-label"
+                            for="input-first-name"
+                            >Old password</label
+                          >
+                          <input
+                            required
+                            type="password"
+                            id="input-first-name"
+                            class="form-control form-control-alternative"
+                            placeholder="Enter old password"
+                          />
+                          <font-awesome-icon
+                            @click="fa_eye_password"
+                            id="fa-eye-password"
+                            icon="fa-solid fa-eye"
+                          />
+                          <font-awesome-icon
+                            @click="fa_eye_slash_password"
+                            id="fa-eye-slash-password"
+                            icon="fa-solid fa-eye-slash"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="form-group focused">
+                          <label
+                            class="form-control-label"
+                            for="input-last-name"
+                            >New password</label
+                          >
+                          <input
+                            required
+                            type="password"
+                            id="input-last-name"
+                            class="form-control form-control-alternative"
+                            placeholder="Enter new password"
+                          />
+                          <font-awesome-icon
+                            @click="fa_eye_repied_password"
+                            id="fa-eye-repied-password"
+                            icon="fa-solid fa-eye"
+                          />
+                          <font-awesome-icon
+                            @click="fa_eye_slash_repied_password"
+                            id="fa-eye-slash-repied-password"
+                            icon="fa-solid fa-eye-slash"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <router-link :to="{ name: 'Home' }">
                     <button
                       style="
                         --clr: #39ff14;
                         width: fit-content;
-                        float: left;
-                        margin: 12px;
+                        position: relative;
+                        left: 2%;
                       "
                     >
-                      <span>REGISTER</span><i></i>
+                      <span>SAVE</span><i></i>
                     </button>
                   </router-link>
-                  <router-link :to="{ name: 'Login' }">
+                  <router-link :to="{ name: 'Forgot_password' }">
                     <button
                       style="
                         --clr: #39ff14;
                         width: fit-content;
-                        float: left;
-                        margin: 12px;
+                        position: relative;
+                        float: right;
                       "
                     >
-                      <span>LOGIN</span><i></i>
+                      <span>FORGOT PASSWORD</span><i></i>
                     </button>
                   </router-link>
                 </form>
@@ -209,6 +378,15 @@ export default {
   setup() {
     const country = ref([
       "Select a country",
+      "Brazil",
+      "Kurdstan",
+      "Canada",
+      "Denmark",
+      "Egypt",
+      "France",
+    ]);
+    const language = ref([
+      "Select a language",
       "Brazil",
       "Kurdstan",
       "Canada",
@@ -241,6 +419,7 @@ export default {
       fa_eye_password,
       fa_eye_slash_repied_password,
       fa_eye_repied_password,
+      language,
     };
   },
 };
