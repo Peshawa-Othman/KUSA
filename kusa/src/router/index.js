@@ -9,6 +9,7 @@ import BellView from "../views/BellView.vue";
 import UserView from "../views/UserView.vue";
 import UserVisit from "../views/UserVisit.vue";
 import EditProfile from "../views/EditProfile.vue";
+import MicrophoneRoom from "../views/MicrophoneRoom.vue";
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
     path: "/uservisit",
     name: "User_visit",
     component: UserVisit,
+  },
+  {
+    path: "/microphoneroom",
+    name: "Microphone_room",
+    component: MicrophoneRoom,
   },
   {
     path: "/",

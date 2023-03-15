@@ -5,7 +5,7 @@
       :key="item"
       style="margin-top: 60px; position: relative; display: inline-table"
     >
-      <div class="div_person_room">
+      <div @click="Microphone_room" class="div_person_room">
         <img id="image_person_room" :src="item.image" alt="" />
         <font-awesome-icon id="fa_microphone" icon="fa-solid fa-microphone" />
         <label id="name_person_room" for="">{{ item.name }}</label>
@@ -32,8 +32,10 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router";
 export default {
   setup() {
+    const router = useRouter();
     const test = [
       {
         image:
@@ -148,7 +150,10 @@ export default {
         time: "7:34",
       },
     ];
-    return { test };
+    function Microphone_room() {
+      router.push({ path: "/microphoneroom" });
+    }
+    return { test, Microphone_room };
   },
 };
 </script>
