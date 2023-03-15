@@ -3,7 +3,7 @@
     <div
       v-for="item in test"
       :key="item"
-      style="margin-top: 60px; position: relative; display: inline-table"
+      style="margin-top: 60px; position: margin-bottom: 60px; relative; display: inline-table"
     >
       <div class="div_person_room">
         <img id="image_person_room" :src="item.image" alt="" />
