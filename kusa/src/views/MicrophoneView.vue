@@ -3,10 +3,11 @@
     <div
       v-for="item in test"
       :key="item"
-      style="margin-top: 60px; position: margin-bottom: 60px; relative; display: inline-table"
+      style="margin-top: 60px; position: relative; display: inline-table"
     >
       <div class="div_person_room">
         <img id="image_person_room" :src="item.image" alt="" />
+        <font-awesome-icon id="fa_microphone" icon="fa-solid fa-microphone" />
         <label id="name_person_room" for="">{{ item.name }}</label>
         <p id="noted_person_room" for="">{{ item.noted }}</p>
         <div class="fa_user">
@@ -153,6 +154,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#fa_microphone {
+  position: relative;
+  float: right;
+  top: 8px;
+  right: 5px;
+  color: aliceblue;
+}
 .div_person_room {
   position: relative;
   display: inline-table;

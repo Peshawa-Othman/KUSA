@@ -1,5 +1,7 @@
 <template>
   <add-post></add-post>
+  <creat-microphone-room></creat-microphone-room>
+  <creat-video-room></creat-video-room>
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
     rel="stylesheet"
@@ -476,7 +478,18 @@
                     Nick Murphy — writes, performs and records all of his own
                     music.
                   </p>
-                  <!-- <a style="color: #898fb4" href="#">Show more</a> -->
+                  <a style="color: #898fb4"
+                    ><font-awesome-icon
+                      @click="create_microphone_room"
+                      id="fa_microphone"
+                      icon="fa-solid fa-microphone"
+                  /></a>
+                  <a style="color: #898fb4"
+                    ><font-awesome-icon
+                      @click="create_video_room"
+                      id="fa_video"
+                      icon="fa-solid fa-video"
+                  /></a>
                 </div>
               </div>
             </div>
@@ -847,6 +860,8 @@
 
 <script>
 import AddPost from "../components/AddPost.vue";
+import CreatMicrophoneRoom from "../components/CreatMicrophoneRoom.vue";
+import CreatVideoRoom from "../components/CreatVideoRoom.vue";
 export default {
   setup() {
     var toast = "";
@@ -909,6 +924,16 @@ export default {
       document.querySelector(".container").style.display = "block";
       document.querySelector("#div_post").style.display = "block";
     }
+    function create_microphone_room() {
+      // document.getElementById("add_post").style.display = "block";
+      document.querySelector(".container2").style.display = "block";
+      document.querySelector("#div_post").style.display = "block";
+    }
+    function create_video_room() {
+      // document.getElementById("add_post").style.display = "block";
+      document.querySelector(".container3").style.display = "block";
+      document.querySelector("#div_post").style.display = "block";
+    }
     return {
       zoom_person_image,
       none_person_image,
@@ -922,9 +947,11 @@ export default {
       followers,
       no_bottons2,
       add_post,
+      create_microphone_room,
+      create_video_room,
     };
   },
-  components: { AddPost },
+  components: { AddPost, CreatMicrophoneRoom, CreatVideoRoom },
 };
 </script>
 
@@ -3638,5 +3665,38 @@ a {
   border: 1px solid blue;
   border-radius: 4px;
   font-weight: bold;
+}
+#fa_microphone {
+  position: relative;
+  // left: 50px;
+  right: 5px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  color: brown;
+  background: #000000a3;
+  padding: 7px;
+}
+#fa_video {
+  position: relative;
+  left: 5px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  color: brown;
+  background: #000000a3;
+  padding: 7px;
+}
+#fa_microphone:hover {
+  background: #11cdef;
+  color: #233dd2;
+  box-shadow: 0px 0px 25px 8px rgb(0 0 0 / 90%);
+}
+#fa_video:hover {
+  background: #11cdef;
+  color: #233dd2;
+  box-shadow: 0px 0px 25px 8px rgb(0 0 0 / 90%);
 }
 </style>
