@@ -19,6 +19,9 @@ import {
   faXmark,
   faImage,
   faHourglassStart,
+  faBorderAll,
+  faHand,
+  faMicrophoneSlash,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -35,7 +38,10 @@ library.add(
   faMagnifyingGlass,
   faXmark,
   faImage,
-  faHourglassStart
+  faHourglassStart,
+  faBorderAll,
+  faHand,
+  faMicrophoneSlash
 );
 
 createApp(App)
