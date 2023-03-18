@@ -24,6 +24,7 @@ import {
   faMicrophoneSlash,
   faRightFromBracket,
   faRightToBracket,
+  faBoxOpen,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -45,7 +46,8 @@ library.add(
   faHand,
   faMicrophoneSlash,
   faRightFromBracket,
-  faRightToBracket
+  faRightToBracket,
+  faBoxOpen
 );
 
 createApp(App)

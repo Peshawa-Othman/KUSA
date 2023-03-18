@@ -9,7 +9,7 @@
       <div class="div_person_room">
         <img id="image_person_room" :src="item.image" alt="" />
         <label id="name_person_room" for="">{{ item.name }}</label>
-        <font-awesome-icon id="fa_microphone" icon="fa-solid fa-microphone" />
+        <font-awesome-icon id="fa_microphone" icon="fa-solid fa-video" />
         <p id="title_person_room" for="">{{ item.noted }}</p>
         <div id="div_icon_person_room">
           <font-awesome-icon style="color: aliceblue" icon="fa-solid fa-user" />
@@ -28,14 +28,29 @@
     </section>
   </div>
   <div id="div_show_connection_room">
-    <div v-for="item in test2" :key="item" id="div_person_data">
+    <div id="div_video_room">
+      <div id="the_container_video" v-for="item in test3" :key="item">
+        <img id="image_person_number" :src="item.image" alt="person" />
+        <video id="info_video_person_number" src=""></video>
+
+        <!-- <font-awesome-icon
+          id="person_number_microphone"
+          icon="fa-solid fa-microphone"
+        />
+        <font-awesome-icon
+          id="person_number_microphone_slash"
+          icon="fa-solid fa-microphone-slash"
+        /> -->
+      </div>
+    </div>
+    <!-- <div v-for="item in test2" :key="item" id="div_person_data">
       <span id="user_follow">Follow</span>
       <img @click="user_image" id="user_image" :src="item.image" alt="" />
       <span id="user_number">{{ item.number }}</span>
       <div id="div_name">
         <span id="user_name">{{ item.name }}</span>
       </div>
-    </div>
+    </div> -->
     <hr />
     <div v-for="item in test3" :key="item" id="div_person_data">
       <!-- <span id="user_follow">Follow</span> -->
@@ -961,7 +976,112 @@ hr {
 #info_fa_right_to_bracket:hover {
   color: #bee900;
 }
+// ///////////////////////////////////////////////////@at-root
+#div_video_room {
+  position: relative;
+  display: inline-table;
+  margin-top: 0px;
+}
+#the_container_video {
+  position: relative;
+  display: inline-table;
+  width: 500px;
+  height: 300px;
+  border: 1px solid;
+}
+#info_video_person_number {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border: 1px solid red;
+}
+#image_person_number {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 164px;
+  left: 44%;
+  border-radius: 60px;
+}
+
+#person_number_microphone {
+  position: relative;
+  right: 39%;
+  bottom: 12px;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+@media (max-width: 1055px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #image_person_number {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 164px;
+    left: 44%;
+    border-radius: 60px;
+  }
+}
+@media (max-width: 880px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+  }
+}
+@media (max-width: 660px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 249px;
+    height: 224px;
+    border: 1px solid;
+  }
+  #image_person_number {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 110px;
+    left: 41%;
+    border-radius: 60px;
+  }
+}
+@media (max-width: 550px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+  }
+  #image_person_number {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 110px;
+    left: 38%;
+    border-radius: 60px;
+  }
+}
+////////////////////////////////////////////////////////////@at-root
 @media (max-width: 500px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 218px;
+    height: 208px;
+    border: 1px solid;
+  }
+  // ////////////////////////////////////////////////////////@at-root
   #card_shadow_person {
     overflow-y: scroll;
     height: 500px;
@@ -1208,6 +1328,60 @@ hr {
   }
   #info_fa_right_from-bracket:hover {
     color: #e90400;
+  }
+}
+@media (max-width: 473px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 199px;
+    height: 208px;
+    border: 1px solid;
+  }
+}
+@media (max-width: 434px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 175px;
+    height: 208px;
+    border: 1px solid;
+  }
+}
+
+@media (max-width: 388px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 155px;
+    height: 208px;
+    border: 1px solid;
+  }
+}
+@media (max-width: 349px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 130px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #image_person_number {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    bottom: 110px;
+    left: 33%;
+    border-radius: 60px;
+  }
+}
+@media (max-width: 297px) {
+  #the_container_video {
+    position: relative;
+    display: inline-table;
+    width: 115px;
+    height: 195px;
+    border: 1px solid;
   }
 }
 </style>

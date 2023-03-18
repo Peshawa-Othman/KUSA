@@ -10,6 +10,7 @@ import UserView from "../views/UserView.vue";
 import UserVisit from "../views/UserVisit.vue";
 import EditProfile from "../views/EditProfile.vue";
 import MicrophoneRoom from "../views/MicrophoneRoom.vue";
+import VideoRoom from "../views/VideoRoom.vue";
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     path: "/microphoneroom",
     name: "Microphone_room",
     component: MicrophoneRoom,
+  },
+  {
+    path: "/videoroom",
+    name: "Video_room",
+    component: VideoRoom,
   },
   {
     path: "/",
