@@ -22,6 +22,8 @@ import {
   faBorderAll,
   faHand,
   faMicrophoneSlash,
+  faRightFromBracket,
+  faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -41,7 +43,9 @@ library.add(
   faHourglassStart,
   faBorderAll,
   faHand,
-  faMicrophoneSlash
+  faMicrophoneSlash,
+  faRightFromBracket,
+  faRightToBracket
 );
 
 createApp(App)

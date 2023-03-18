@@ -30,7 +30,7 @@
   <div id="div_show_connection_room">
     <div v-for="item in test2" :key="item" id="div_person_data">
       <span id="user_follow">Follow</span>
-      <img id="user_image" :src="item.image" alt="" />
+      <img @click="user_image" id="user_image" :src="item.image" alt="" />
       <span id="user_number">{{ item.number }}</span>
       <div id="div_name">
         <span id="user_name">{{ item.name }}</span>
@@ -39,7 +39,7 @@
     <hr />
     <div v-for="item in test3" :key="item" id="div_person_data">
       <!-- <span id="user_follow">Follow</span> -->
-      <img id="user_image" :src="item.image" alt="All" />
+      <img @click="user_ont_pick" id="user_image" :src="item.image" alt="All" />
       <span id="user_number">{{ item.number }}</span>
       <div id="div_name">
         <span id="user_name">{{ item.name }}</span>
@@ -79,7 +79,12 @@
   <div class="box_people">
     <div v-for="item in test2" :key="item" id="div_person_data">
       <!-- <span id="user_follow">Follow</span> -->
-      <img id="user_image" :src="item.image" alt="All" />
+      <img
+        @click="user_ont_pick_in_box"
+        id="user_image"
+        :src="item.image"
+        alt="All"
+      />
       <span id="user_number">{{ item.number }}</span>
       <div id="div_name">
         <span id="user_name">{{ item.name }}</span>
@@ -87,6 +92,62 @@
     </div>
   </div>
   <div id="div_background" @click="div_background"></div>
+  <div id="info_person">
+    <font-awesome-icon
+      @click="button_info_close"
+      id="fa-xmark"
+      icon="fa-solid fa-xmark"
+    />
+    <label id="info_follow">Follow</label>
+    <img
+      id="info_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt=""
+    />
+    <p id="info_name">Peshawa Othman Rashid</p>
+    <div id="div_info_age">
+      <span id="info_age">6</span>
+      <span id="info_age_textD">Day</span>
+      <span id="info_age">1</span>
+      <span id="info_age_textM">Month</span>
+      <span id="info_age">2000</span>
+      <span id="info_age_textY">Year</span>
+    </div>
+    <div id="div_info_location">
+      <h3>Countery: Kurdistan</h3>
+      <h3>Language: Kurdy</h3>
+    </div>
+    <div id="div_info_text">
+      Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy —
+      writes, performs and records all of his own music.Ryan — the name taken by
+      Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
+      records all of his own music.
+    </div>
+    <div id="div_info_data">
+      <font-awesome-icon
+        @click="info_fa_microphone"
+        id="info_fa_microphone"
+        icon="fa-solid fa-microphone"
+      />
+      <font-awesome-icon
+        @click="info_fa_microphone_slash"
+        id="info_fa_microphone_slash"
+        icon="fa-solid fa-microphone-slash"
+      />
+      <font-awesome-icon
+        id="info_fa_right_from-bracket"
+        icon="fa-solid fa-right-from-bracket"
+      />
+      <font-awesome-icon
+        id="info_fa_right_to_bracket"
+        icon="fa-solid fa-right-to-bracket"
+      />
+    </div>
+  </div>
+  <div
+    @click="div_info_person_background"
+    id="div_info_person_background"
+  ></div>
 </template>
 
 <script>
@@ -310,7 +371,42 @@ export default {
       document.getElementById("div_background").style.display = "none";
       document.querySelector(".box_people").style.top = "105%";
     }
-
+    function info_fa_microphone_slash() {
+      document.getElementById("info_fa_microphone_slash").style.display =
+        "none";
+      document.getElementById("info_fa_microphone").style.display =
+        "inline-table";
+    }
+    function info_fa_microphone() {
+      document.getElementById("info_fa_microphone_slash").style.display =
+        "inline-table";
+      document.getElementById("info_fa_microphone").style.display = "none";
+    }
+    function div_info_person_background() {
+      document.getElementById("div_info_person_background").style.display =
+        "none";
+      document.getElementById("info_person").style.left = "105%";
+    }
+    function button_info_close() {
+      document.getElementById("div_info_person_background").style.display =
+        "none";
+      document.getElementById("info_person").style.left = "105%";
+    }
+    function user_image() {
+      document.getElementById("div_info_person_background").style.display =
+        "block";
+      document.getElementById("info_person").style.left = "43%";
+    }
+    function user_ont_pick() {
+      document.getElementById("div_info_person_background").style.display =
+        "block";
+      document.getElementById("info_person").style.left = "43%";
+    }
+    function user_ont_pick_in_box() {
+      document.getElementById("div_info_person_background").style.display =
+        "block";
+      document.getElementById("info_person").style.left = "43%";
+    }
     return {
       microphone_close,
       microphone_open,
@@ -318,6 +414,13 @@ export default {
       hand_open,
       show_all_user,
       div_background,
+      info_fa_microphone_slash,
+      info_fa_microphone,
+      div_info_person_background,
+      button_info_close,
+      user_image,
+      user_ont_pick,
+      user_ont_pick_in_box,
       test,
       test2,
       test3,
@@ -620,5 +723,355 @@ hr {
 .box_people::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 5px;
+}
+// ////////////////////////////////////////@at-root
+#info_person {
+  position: fixed;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 5px;
+  top: 9px;
+  left: 103%;
+  width: 56%;
+  z-index: 5;
+  height: 590px;
+  background: #10161c;
+  border: 1px solid;
+  box-shadow: 0px 0px 8px 2px black;
+  transition: left 1s;
+}
+#div_info_person_background {
+  display: none;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  cursor: pointer;
+}
+#info_person::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+#info_person::-webkit-scrollbar-track {
+  background-color: #0000007c;
+}
+
+#info_person::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+#info_image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  left: 50%;
+  top: 7px;
+  transform: translate(-50%, 0px);
+  cursor: pointer;
+}
+#fa-xmark {
+  position: relative;
+  font-size: xx-large;
+  float: right;
+  color: aliceblue;
+  margin: 9px;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+#fa-xmark:hover {
+  color: rgb(240, 2, 2);
+}
+#info_follow {
+  position: relative;
+  top: 9px;
+  float: left;
+  left: 5px;
+  font-size: smaller;
+  padding: 5px;
+  border-radius: 4px;
+  color: aquamarine;
+  letter-spacing: 1px;
+  background: blueviolet;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+#info_follow:hover {
+  color: rgb(137, 243, 16);
+  background: rgb(55, 38, 71);
+}
+#info_name {
+  position: relative;
+  top: 107px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: aliceblue;
+}
+#div_info_age {
+  position: relative;
+  top: 130px;
+  font-size: medium;
+  color: aliceblue;
+  left: 56%;
+  transform: translate(-50%, 0px);
+}
+#info_age {
+  margin-left: 20px;
+}
+
+#info_age_textD {
+  margin-right: 0px;
+  position: relative;
+  top: 23px;
+  right: 20px;
+  letter-spacing: 1px;
+}
+#info_age_textM {
+  position: relative;
+  top: 23px;
+  right: 24px;
+  letter-spacing: 1px;
+}
+#info_age_textY {
+  position: relative;
+  top: 23px;
+  right: 33px;
+  letter-spacing: 1px;
+}
+#div_info_location {
+  position: relative;
+  top: 185px;
+  color: aliceblue;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+#div_info_text {
+  position: relative;
+  top: 220px;
+  color: aliceblue;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+#div_info_data {
+  position: relative;
+  top: 297px;
+}
+#info_fa_microphone_slash {
+  display: none;
+  position: relative;
+  font-size: x-large;
+  border: 1px solid;
+  width: 24px;
+  color: red;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.5s;
+}
+#info_fa_microphone {
+  position: relative;
+  font-size: x-large;
+  border: 1px solid;
+  width: 24px;
+  color: chartreuse;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.5s;
+}
+#info_fa_right_from-bracket {
+  position: relative;
+  font-size: x-large;
+  border: 1px solid;
+  width: 24px;
+  color: #ff6d6a;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.5s;
+  margin-left: 25px;
+}
+#info_fa_right_to_bracket {
+  position: relative;
+  font-size: x-large;
+  border: 1px solid;
+  width: 24px;
+  color: #ff6d6a;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: color 0.5s;
+  margin-left: 25px;
+}
+#info_fa_right_from-bracket:hover {
+  color: #e90400;
+}
+#info_fa_right_to_bracket:hover {
+  color: #bee900;
+}
+@media (max-width: 500px) {
+  #info_person {
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    top: 9px;
+    left: 103%;
+    width: 56%;
+    z-index: 5;
+    border-radius: 5px;
+    height: 465px;
+    background: #10161c;
+    border: 1px solid;
+    box-shadow: 0px 0px 8px 2px black;
+    transition: left 1s;
+  }
+  #info_image {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 40px;
+    left: 50%;
+    top: 7px;
+    transform: translate(-50%, 0px);
+    cursor: pointer;
+  }
+  #fa-xmark {
+    position: relative;
+    font-size: 24px;
+    float: right;
+    color: aliceblue;
+    margin: 9px;
+    cursor: pointer;
+    transition: color 0.5s;
+  }
+  #fa-xmark:hover {
+    color: rgb(240, 2, 2);
+  }
+  #info_follow {
+    position: relative;
+    top: 9px;
+    float: left;
+    left: 5px;
+    font-size: 9px;
+    padding: 5px;
+    border-radius: 4px;
+    color: aquamarine;
+    letter-spacing: 1px;
+    background: blueviolet;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  #info_follow:hover {
+    color: rgb(137, 243, 16);
+    background: rgb(55, 38, 71);
+  }
+  #info_name {
+    position: relative;
+    top: 65px;
+    letter-spacing: 1px;
+    font-size: 9px;
+    color: aliceblue;
+  }
+  #div_info_age {
+    position: relative;
+    top: 77px;
+    font-size: 10px;
+    color: aliceblue;
+    left: 50%;
+    transform: translate(-50%, 0px);
+  }
+  #info_age {
+    margin-left: 20px;
+  }
+
+  #info_age_textD {
+    margin-right: 0px;
+    position: relative;
+    top: 23px;
+    right: 13px;
+    letter-spacing: 1px;
+  }
+  #info_age_textM {
+    position: relative;
+    top: 23px;
+    right: 20px;
+    letter-spacing: 1px;
+  }
+  #info_age_textY {
+    position: relative;
+    top: 23px;
+    right: 24px;
+    letter-spacing: 1px;
+  }
+  #div_info_location {
+    position: relative;
+    top: 128px;
+    color: aliceblue;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  #div_info_text {
+    position: relative;
+    top: 138px;
+    color: aliceblue;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  #div_info_data {
+    position: relative;
+    top: 179px;
+  }
+  #info_fa_microphone_slash {
+    display: none;
+    position: relative;
+    font-size: 17px;
+    border: 1px solid;
+    width: 17px;
+    color: red;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: color 0.5s;
+  }
+  #info_fa_microphone {
+    position: relative;
+    font-size: 17px;
+    border: 1px solid;
+    width: 17px;
+    color: chartreuse;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: color 0.5s;
+  }
+  #info_fa_right_from-bracket {
+    position: relative;
+    font-size: 17px;
+    border: 1px solid;
+    width: 17px;
+    color: #ff6d6a;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: color 0.5s;
+    margin-left: 25px;
+  }
+  #info_fa_right_to_bracket {
+    position: relative;
+    font-size: 17px;
+    border: 1px solid;
+    width: 17px;
+    color: #ff6d6a;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: color 0.5s;
+    margin-left: 25px;
+  }
+  #info_fa_right_from-bracket:hover {
+    color: #e90400;
+  }
 }
 </style>
