@@ -28,6 +28,7 @@ import {
   faVideoSlash,
   faCompress,
   faExpand,
+  faUsersLine,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -53,7 +54,8 @@ library.add(
   faBoxOpen,
   faVideoSlash,
   faCompress,
-  faExpand
+  faExpand,
+  faUsersLine
 );
 
 createApp(App)

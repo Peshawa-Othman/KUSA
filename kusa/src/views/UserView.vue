@@ -497,352 +497,42 @@
           <div style="background: #10161c" class="col-xl-8 order-xl-1">
             <div style="background: #10161c" class="card bg-secondary shadow">
               <div style="background: #10161c" class="card-body">
-                <form>
-                  <div class="product-card">
-                    <!-- <div class="badge">Hot</div> -->
-                    <div class="product-tumb">
-                      <img
-                        @click="zoom_post_image"
-                        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                        alt=""
-                      />
+                <form
+                  style="position: relative; overflow-y: scroll; height: 595px"
+                >
+                  <div id="box_post" v-for="item in test" :key="item">
+                    <img
+                      v-if="item.image != ``"
+                      id="box_image"
+                      :src="item.image"
+                      alt="person"
+                    />
+                    <div>
+                      <!-- <img
+                        id="box_person_image"
+                        :src="item.image_person"
+                        alt="person"
+                      /> -->
+                      <span id="box_person_name">{{ item.name }}</span>
                     </div>
-                    <div class="product-details">
-                      <!-- <span class="product-catagory">Women,bag</span>
-                      <h4><a href="">Women leather bag</a></h4> -->
-                      <div
-                        style="
-                          position: relative;
-                          width: -webkit-fill-available;
-                          height: 28px;
-                          /* background: black; */
-                          display: flex;
-                        "
-                      >
-                        <img
-                          id="imageperson"
-                          src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                          alt=""
-                        />
-                        <p id="person_name">Peshawa Othman Rashid</p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Vero, possimus nostrum! Lorem ipsum dolor sit
-                        amet, consectetur adipisicing elit. Vero, possimus
-                        nostrum! consectetur adipisicing elit.
+                    <div>
+                      <p id="box_person_text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Dolorem, neque excepturi laborum quaerat eligendi
+                        accusamus iusto fugit.
                       </p>
-
-                      <!-- <div class="product-bottom-details">
-                        <div class="product-price"></div>
-                        <div class="product-links">
-                          <a href=""><i class="fa fa-heart"></i></a>
-                          <a href=""><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                      </div> -->
-                      <div id="div_icon1" style="margin-right: 35px">
-                        <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            cursor: pointer;
-                          "
-                          icon="fa-solid fa-thumbs-up"
-                        /><span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >45</span
-                        >
-                      </div>
-                      <div id="div_icon2" style="margin-left: 35px">
-                        <span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >55</span
-                        >
-                        <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            cursor: pointer;
-                          "
-                          icon="fa-solid fa-thumbs-down"
-                        />
-                      </div>
                     </div>
-                  </div>
-                  <div class="product-card">
-                    <!-- <div class="badge">Hot</div> -->
-                    <div class="product-tumb">
-                      <img
-                        @click="zoom_post_image"
-                        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="product-details">
-                      <!-- <span class="product-catagory">Women,bag</span>
-                      <h4><a href="">Women leather bag</a></h4> -->
+                    <div id="box_person_like">
                       <div
-                        style="
-                          position: relative;
-                          width: -webkit-fill-available;
-                          height: 28px;
-                          /* background: black; */
-                          display: flex;
-                        "
+                        style="position: relative; width: auto; height: 12px"
                       >
-                        <img
-                          id="imageperson"
-                          src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                          alt=""
-                        />
-                        <p id="person_name">Peshawa Othman Rashid</p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Vero, possimus nostrum!
-                      </p>
-
-                      <!-- <div class="product-bottom-details">
-                        <div class="product-price"></div>
-                        <div class="product-links">
-                          <a href=""><i class="fa fa-heart"></i></a>
-                          <a href=""><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                      </div> -->
-                      <div id="div_icon1" style="margin-right: 35px">
                         <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            cursor: pointer;
-                          "
+                          id="like"
                           icon="fa-solid fa-thumbs-up"
-                        /><span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >45</span
-                        >
-                      </div>
-                      <div id="div_icon2" style="margin-left: 35px">
-                        <span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >55</span
-                        >
+                        /><span id="like_number">45</span>
+                        <span id="unlike_number">55</span>
                         <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            cursor: pointer;
-                          "
-                          icon="fa-solid fa-thumbs-down"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-card">
-                    <!-- <div class="badge">Hot</div> -->
-                    <div class="product-tumb">
-                      <img
-                        @click="zoom_post_image"
-                        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="product-details">
-                      <!-- <span class="product-catagory">Women,bag</span>
-                      <h4><a href="">Women leather bag</a></h4> -->
-                      <div
-                        style="
-                          position: relative;
-                          width: -webkit-fill-available;
-                          height: 28px;
-                          /* background: black; */
-                          display: flex;
-                        "
-                      >
-                        <img
-                          id="imageperson"
-                          src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                          alt=""
-                        />
-                        <p id="person_name">Peshawa Othman Rashid</p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Vero, possimus nostrum!
-                      </p>
-
-                      <!-- <div class="product-bottom-details">
-                        <div class="product-price"></div>
-                        <div class="product-links">
-                          <a href=""><i class="fa fa-heart"></i></a>
-                          <a href=""><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                      </div> -->
-                      <div id="div_icon1" style="margin-right: 35px">
-                        <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            cursor: pointer;
-                          "
-                          icon="fa-solid fa-thumbs-up"
-                        /><span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >45</span
-                        >
-                      </div>
-                      <div id="div_icon2" style="margin-left: 35px">
-                        <span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >55</span
-                        >
-                        <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            cursor: pointer;
-                          "
-                          icon="fa-solid fa-thumbs-down"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-card">
-                    <!-- <div class="badge">Hot</div> -->
-                    <div class="product-tumb">
-                      <img
-                        @click="zoom_post_image"
-                        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                        alt=""
-                      />
-                    </div>
-                    <div class="product-details">
-                      <!-- <span class="product-catagory">Women,bag</span>
-                      <h4><a href="">Women leather bag</a></h4> -->
-                      <div
-                        style="
-                          position: relative;
-                          width: -webkit-fill-available;
-                          height: 28px;
-                          /* background: black; */
-                          display: flex;
-                        "
-                      >
-                        <img
-                          id="imageperson"
-                          src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-                          alt=""
-                        />
-                        <p id="person_name">Peshawa Othman Rashid</p>
-                      </div>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Vero, possimus nostrum!
-                      </p>
-
-                      <!-- <div class="product-bottom-details">
-                        <div class="product-price"></div>
-                        <div class="product-links">
-                          <a href=""><i class="fa fa-heart"></i></a>
-                          <a href=""><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                      </div> -->
-                      <div id="div_icon1" style="margin-right: 35px">
-                        <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            cursor: pointer;
-                          "
-                          icon="fa-solid fa-thumbs-up"
-                        /><span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: left;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >45</span
-                        >
-                      </div>
-                      <div id="div_icon2" style="margin-left: 35px">
-                        <span
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            bottom: 4px;
-                            left: 4px;
-                          "
-                          >55</span
-                        >
-                        <font-awesome-icon
-                          style="
-                            margin: 0;
-                            padding: 0;
-                            position: relative;
-                            float: right;
-                            cursor: pointer;
-                          "
+                          id="unlike"
                           icon="fa-solid fa-thumbs-down"
                         />
                       </div>
@@ -865,6 +555,79 @@ import CreatVideoRoom from "../components/CreatVideoRoom.vue";
 export default {
   setup() {
     var toast = "";
+    const test = [
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image: "",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+      {
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+        name: "peshawa Othman Rashid",
+        language: "kurdy",
+        location: "kurdistan",
+        image_person:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
+      },
+    ];
     function zoom_person_image() {
       document.getElementById("zoom_person_image").style.display = "block";
       document.getElementById("zoom_person_div").style.display = "block";
@@ -949,6 +712,7 @@ export default {
       add_post,
       create_microphone_room,
       create_video_room,
+      test,
     };
   },
   components: { AddPost, CreatMicrophoneRoom, CreatVideoRoom },
@@ -956,6 +720,101 @@ export default {
 </script>
 
 <style scoped lang="scss">
+form::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+form::-webkit-scrollbar-track {
+  background-color: #0000007c;
+}
+
+form::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+#box_post {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  // border: 1px solid;
+  box-shadow: 0px 0px 4px 2px black;
+  max-width: fit-content;
+  max-height: fit-content;
+  min-width: 200px;
+  min-height: 200px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+}
+#box_post:hover {
+  box-shadow: 0px 0px 10px 2px black;
+}
+#box_image {
+  position: relative;
+  object-fit: contain;
+  width: 235px;
+  height: 232px;
+}
+#box_person_image {
+  position: relative;
+  width: 31px;
+  right: 17px;
+  top: 4px;
+  height: 31px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+#box_person_image:hover {
+  box-shadow: 0px 0px 4px 1px #fff;
+}
+#box_person_name {
+  position: relative;
+  font-size: 14px;
+  color: aliceblue;
+  bottom: 0px;
+  left: 40px;
+}
+#box_person_text {
+  position: relative;
+  width: 235px;
+  color: aliceblue;
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: left;
+  left: 5px;
+}
+#box_person_like {
+  position: relative;
+  width: auto;
+  // border: 1px solid;
+  padding: 8px;
+}
+#like {
+  position: relative;
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+  color: #dfdfdf;
+}
+#unlike {
+  position: relative;
+  float: right;
+  margin-right: 5px;
+  cursor: pointer;
+  color: #dfdfdf;
+}
+#like_number {
+  position: relative;
+  float: left;
+  color: #dfdfdf;
+}
+#unlike_number {
+  position: relative;
+  float: right;
+  color: #dfdfdf;
+}
+
+// ////////////////////////////////////////////////////////////////////////////////////////////////@at-root
 #input_search {
   position: relative;
   width: 208px;
@@ -1110,7 +969,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: #0a0707c2;
+  background: rgb(10 7 7 / 22%);
 }
 #show_following {
   display: none;
@@ -1123,7 +982,7 @@ export default {
   height: 550px;
   z-index: 2;
   background: rgb(16, 22, 28);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgb(255 255 255 / 46%);
+  box-shadow: 0px 0px 8px 1px black;
   overflow-y: scroll;
 }
 #show_following::-webkit-scrollbar {
@@ -1150,7 +1009,7 @@ export default {
   height: 550px;
   z-index: 2;
   background: rgb(16, 22, 28);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgb(255 255 255 / 46%);
+  box-shadow: 0px 0px 8px 1px black;
   overflow-y: scroll;
 }
 #show_followers::-webkit-scrollbar {
@@ -2392,7 +2251,7 @@ button.bg-white:focus {
 
 .shadow,
 .card-profile-image img {
-  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;
+  box-shadow: 0px 0px 5px 2px black;
 }
 
 .m-0 {
