@@ -29,14 +29,13 @@
   position: relative;
   left: 50%;
   transform: translate(-50%, 0px);
-  border: 1px solid rgb(74 105 120);
+  // border: 1px solid rgb(74 105 120);
   border-radius: 2px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3),
-    1px 1px 12px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0px 0px 17px 3px black;
 }
 #paragraf {
-  color: #8b8bc1;
-  margin-top: 40px;
+  color: #cfcfff;
+  padding-top: 12px;
 }
 // /////////////////////////////////////////////@at-root
 .div_email {
@@ -385,6 +384,97 @@ button:hover i::after {
   }
   100% {
     box-shadow: #27272c;
+  }
+}
+@media (max-width: 500px) {
+  #register {
+    position: relative;
+    top: 70px;
+    float: right;
+    right: 10px;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 11px 7px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  #register:hover {
+    letter-spacing: 1px;
+    padding: 11px 7px;
+    background: var(--clr);
+    color: var(--clr);
+    /* box-shadow: 0 0 35px var(--clr); */
+    animation: box 3s infinite;
+  }
+  #login {
+    position: relative;
+    top: 70px;
+    float: left;
+    left: 10px;
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 1px;
+    font-size: 11px;
+    padding: 11px 7px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  #login:hover {
+    letter-spacing: 1px;
+    padding: 11px 7px;
+    background: var(--clr);
+    color: var(--clr);
+    /* box-shadow: 0 0 35px var(--clr); */
+    animation: box 3s infinite;
+  }
+  .input_email {
+    outline: none;
+    width: 200px;
+    height: 30px;
+    font-size: small;
+    background: #322424;
+    border: 1px solid #585858;
+    color: aqua;
+    border-radius: 4px;
+    transition: border 0.5s ease;
+  }
+  .input_email:focus {
+    outline: none;
+    width: 200px;
+    height: 30px;
+    font-size: small;
+    background: #322424;
+    border: 1px solid #b6b6cf;
+    color: aqua;
+    border-radius: 4px;
+  }
+  .div_email #label_email {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    position: relative;
+    right: 80px;
+    bottom: 40px;
+    font-size: 12px;
+    color: #7b7b8d;
+    transition: color 0.5s ease;
+    transition: bottom 0.5s ease;
+  }
+  .div_email .input_email:focus + #label_email {
+    position: relative;
+    right: 80px;
+    bottom: 72px;
+    font-size: 13px;
+    color: #b6b6cf;
   }
 }
 </style>

@@ -11,17 +11,17 @@
         <label id="name_person_room" for="">{{ item.name }}</label>
         <p id="noted_person_room" for="">{{ item.noted }}</p>
         <div class="fa_user">
-          <font-awesome-icon style="color: aliceblue" icon="fa-solid fa-user" />
-          <label style="color: aliceblue; margin-left: 5px" for="">{{
+          <font-awesome-icon style="color: #a9f113" icon="fa-solid fa-user" />
+          <label style="color: #a9f113; margin-left: 5px" for="">{{
             item.users
           }}</label>
         </div>
         <div class="fa_hourglass_start">
           <font-awesome-icon
-            style="color: aliceblue"
+            style="color: #a9f113"
             icon="fa-solid fa-hourglass-start"
           />
-          <label style="color: aliceblue; margin-left: 5px" for="">{{
+          <label style="color: #a9f113; margin-left: 5px" for="">{{
             item.time
           }}</label>
         </div>
@@ -164,7 +164,7 @@ export default {
   float: right;
   top: 8px;
   right: 5px;
-  color: aliceblue;
+  color: #a9f113;
 }
 .div_person_room {
   position: relative;
@@ -175,7 +175,7 @@ export default {
   background-color: #10161c;
   border-radius: 5px;
   margin: 10px;
-  box-shadow: 0px 0px 2px 4px;
+  box-shadow: 0px 0px 4px 1px black;
   cursor: pointer;
 }
 .div_person_room:hover {
@@ -187,7 +187,7 @@ export default {
   background-color: #10161c;
   border-radius: 5px;
   margin: 10px;
-  box-shadow: 0px 0px 2px 7px;
+  box-shadow: 0px 0px 4px 3px black;
 }
 
 #image_person_room {
@@ -233,7 +233,7 @@ export default {
   padding: 3px;
   font-size: 13px;
   top: 84px;
-  color: aliceblue;
+  color: #a9f113;
 }
 @media (max-width: 400px) {
   #noted_person_room {
@@ -264,7 +264,7 @@ export default {
     padding: 3px;
     font-size: 12px;
     top: 84px;
-    color: aliceblue;
+    color: #a9f113;
   }
 }
 @media (max-width: 360px) {
@@ -285,6 +285,24 @@ export default {
   .fa_hourglass_start {
     position: relative;
     float: left;
+    top: 105px;
+    right: 150px;
+  }
+  #following {
+    position: relative;
+    float: right;
+    margin-right: 3px;
+    letter-spacing: 1px;
+    padding: 3px;
+    font-size: 12px;
+    top: 85px;
+    color: #a9f113;
+  }
+}
+@media (max-width: 300px) {
+  .fa_hourglass_start {
+    position: relative;
+    float: left;
     top: 84px;
     right: 150px;
   }
@@ -295,8 +313,8 @@ export default {
     letter-spacing: 1px;
     padding: 3px;
     font-size: 12px;
-    top: 68px;
-    color: aliceblue;
+    top: 66px;
+    color: #a9f113;
   }
 }
 </style>

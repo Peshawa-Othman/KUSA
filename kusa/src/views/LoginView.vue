@@ -271,6 +271,7 @@ button:hover i::after {
   left: 50%;
   transform: translate(-50%, 0px);
   transition: 0.5s;
+  color: chocolate;
 }
 #forgot_password:hover {
   color: #766dc8;

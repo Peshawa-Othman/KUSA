@@ -1,4 +1,56 @@
 <template>
+  <div id="zoom_the_user_video">
+    <img
+      id="zoom_image_user"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="person"
+    />
+    <label id="zoom_name_user">Peshawa Othman Rashid</label>
+    <video id="zoom_video_user" src=""></video>
+    <div
+      style="
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        width: inherit;
+        height: auto;
+        transform: translate(-50%, 0px);
+      "
+    >
+      <font-awesome-icon
+        @click="zoom_microphone"
+        id="zoom_microphone"
+        icon="fa-solid fa-microphone"
+      />
+      <font-awesome-icon
+        @click="zoom_microphone_close"
+        id="zoom_microphone_close"
+        icon="fa-solid fa-microphone-slash"
+      />
+      <font-awesome-icon
+        @click="zoom_video"
+        id="zoom_video"
+        icon="fa-solid fa-video"
+      />
+      <font-awesome-icon
+        @click="zoom_video_close"
+        id="zoom_video_close"
+        icon="fa-solid fa-video-slash"
+      />
+      <font-awesome-icon
+        @click="zoom_compress"
+        id="zoom_compress"
+        icon="fa-solid fa-compress"
+      />
+      <font-awesome-icon
+        @click="zoom_expand"
+        id="zoom_expand"
+        icon="fa-solid fa-expand"
+      />
+    </div>
+  </div>
+
+  <!-- /////////////////////////////////////////////// -->
   <div id="card_shadow_person">
     <font-awesome-icon
       @click="button_other_room_close"
@@ -12,8 +64,8 @@
         <font-awesome-icon id="fa_microphone" icon="fa-solid fa-video" />
         <p id="title_person_room" for="">{{ item.noted }}</p>
         <div id="div_icon_person_room">
-          <font-awesome-icon style="color: aliceblue" icon="fa-solid fa-user" />
-          <label style="color: aliceblue; margin-left: 5px" for="">{{
+          <font-awesome-icon style="color: #a9f113" icon="fa-solid fa-user" />
+          <label style="color: #a9f113; margin-left: 5px" for="">{{
             item.users
           }}</label>
         </div>
@@ -29,18 +81,45 @@
   </div>
   <div id="div_show_connection_room">
     <div id="div_video_room">
-      <div id="the_container_video" v-for="item in test3" :key="item">
+      <div
+        v-for="(item, index) in test3"
+        :key="item"
+        :id="`the_container_video-${index}`"
+      >
         <img id="image_person_number" :src="item.image" alt="person" />
+        <label id="label_name_person_room">{{ item.name }}</label>
         <video id="info_video_person_number" src=""></video>
 
-        <!-- <font-awesome-icon
-          id="person_number_microphone"
+        <font-awesome-icon
+          @click="person_number_microphone(index)"
+          :id="`person_number_microphone-${index}`"
           icon="fa-solid fa-microphone"
         />
         <font-awesome-icon
-          id="person_number_microphone_slash"
+          @click="person_number_microphone_close(index)"
+          :id="`person_number_microphone_close-${index}`"
           icon="fa-solid fa-microphone-slash"
-        /> -->
+        />
+        <font-awesome-icon
+          @click="person_number_video(index)"
+          :id="`person_number_video-${index}`"
+          icon="fa-solid fa-video"
+        />
+        <font-awesome-icon
+          @click="person_number_video_close(index)"
+          :id="`person_number_video_close-${index}`"
+          icon="fa-solid fa-video-slash"
+        />
+        <font-awesome-icon
+          @click="person_number_compress(index)"
+          :id="`person_number_compress-${index}`"
+          icon="fa-solid fa-compress"
+        />
+        <font-awesome-icon
+          @click="person_number_expand(index)"
+          :id="`person_number_expand-${index}`"
+          icon="fa-solid fa-expand"
+        />
       </div>
     </div>
     <!-- <div v-for="item in test2" :key="item" id="div_person_data">
@@ -51,6 +130,18 @@
         <span id="user_name">{{ item.name }}</span>
       </div>
     </div> -->
+    <!-- <hr /> -->
+    <br />
+    <br />
+    <br />
+    <div v-for="item in test3" :key="item" id="div_person_data">
+      <span style="left: 34px" id="user_follow">Follow</span>
+      <img @click="user_ont_pick" id="user_image" :src="item.image" alt="All" />
+      <!-- <span id="user_number">{{ item.number }}</span> -->
+      <div id="div_name">
+        <span id="user_name">{{ item.name }}</span>
+      </div>
+    </div>
     <hr />
     <div v-for="item in test3" :key="item" id="div_person_data">
       <!-- <span id="user_follow">Follow</span> -->
@@ -78,6 +169,16 @@
         @click="microphone_open"
         id="fa-microphone-slash"
         icon="fa-solid fa-microphone-slash"
+      />
+      <font-awesome-icon
+        @click="fa_compress_camera"
+        id="fa_compress_camera"
+        icon="fa-solid fa-video"
+      />
+      <font-awesome-icon
+        @click="fa_expand_camera"
+        id="fa_expand_camera"
+        icon="fa-solid fa-video-slash"
       />
       <font-awesome-icon
         @click="hand_close"
@@ -437,6 +538,62 @@ export default {
         "none";
       document.getElementById("card_shadow_person").style.left = "-103%";
     }
+    function person_number_microphone_close(index) {
+      document.getElementById(
+        `person_number_microphone_close-${index}`
+      ).style.display = "none";
+      document.getElementById(
+        `person_number_microphone-${index}`
+      ).style.display = "block";
+    }
+    function person_number_microphone(index) {
+      document.getElementById(
+        `person_number_microphone_close-${index}`
+      ).style.display = "block";
+      document.getElementById(
+        `person_number_microphone-${index}`
+      ).style.display = "none";
+    }
+    function person_number_video_close(index) {
+      document.getElementById(
+        `person_number_video_close-${index}`
+      ).style.display = "none";
+      document.getElementById(`person_number_video-${index}`).style.display =
+        "block";
+    }
+    function person_number_video(index) {
+      document.getElementById(
+        `person_number_video_close-${index}`
+      ).style.display = "block";
+      document.getElementById(`person_number_video-${index}`).style.display =
+        "none";
+    }
+    function person_number_compress(index) {
+      document.getElementById(`person_number_expand-${index}`).style.display =
+        "block";
+      document.getElementById(`person_number_compress-${index}`).style.display =
+        "none";
+    }
+    function person_number_expand(index) {
+      document.getElementById(`person_number_expand-${index}`).style.display =
+        "none";
+      document.getElementById(`person_number_compress-${index}`).style.display =
+        "block";
+      document.getElementById("zoom_the_user_video").style.display = "block";
+    }
+    function zoom_compress() {
+      document.getElementById("zoom_the_user_video").style.display = "none";
+    }
+    function fa_compress_camera() {
+      document.getElementById("fa_compress_camera").style.display = "none";
+      document.getElementById("fa_expand_camera").style.display =
+        "inline-table";
+    }
+    function fa_expand_camera() {
+      document.getElementById("fa_expand_camera").style.display = "none";
+      document.getElementById("fa_compress_camera").style.display =
+        "inline-table";
+    }
     return {
       microphone_close,
       microphone_open,
@@ -453,6 +610,15 @@ export default {
       user_ont_pick_in_box,
       fa_room_open,
       button_other_room_close,
+      person_number_microphone_close,
+      person_number_microphone,
+      person_number_video_close,
+      person_number_video,
+      person_number_expand,
+      person_number_compress,
+      zoom_compress,
+      fa_compress_camera,
+      fa_expand_camera,
       test,
       test2,
       test3,
@@ -462,6 +628,102 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#zoom_the_user_video {
+  display: none;
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  height: -webkit-fill-available;
+  top: 0px;
+  background: black;
+  z-index: 5;
+}
+#zoom_image_user {
+  position: absolute;
+  width: 100px;
+  cursor: pointer;
+  height: 100px;
+  bottom: 364px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  border-radius: 60px;
+}
+#zoom_name_user {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  top: 311px;
+  color: aliceblue;
+  width: auto;
+}
+#zoom_video_user {
+  position: absolute;
+  border: 1px solid;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  height: 100%;
+}
+#zoom_microphone {
+  position: initial;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  color: #bee900;
+  cursor: pointer;
+  font-size: 22px;
+}
+#zoom_microphone_close {
+  display: none;
+  font-size: 22px;
+  position: initial;
+  cursor: pointer;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  color: red;
+}
+#zoom_video {
+  position: initial;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  color: #bee900;
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 50px;
+}
+#zoom_video_close {
+  display: none;
+  font-size: 22px;
+  position: initial;
+  cursor: pointer;
+  margin-left: 50px;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  color: red;
+}
+#zoom_compress {
+  display: initial;
+  font-size: 22px;
+  position: initial;
+  float: right;
+  margin-right: 16px;
+  cursor: pointer;
+  color: #bee900;
+}
+#zoom_expand {
+  display: none;
+  font-size: 22px;
+  position: initial;
+  float: right;
+  margin-right: 16px;
+  cursor: pointer;
+  color: red;
+}
+// //////////////////////////////////////////@at-root
 .div_person_room {
   position: relative;
   display: inline-table;
@@ -540,7 +802,7 @@ export default {
   right: 6px;
 }
 #fa_microphone {
-  color: aliceblue;
+  color: #a9f113;
   position: relative;
   left: 11px;
   bottom: 19px;
@@ -552,21 +814,21 @@ export default {
   top: 17px;
 }
 #div_icon_person_room {
-  color: aliceblue;
+  color: #a9f113;
   position: relative;
   top: 39px;
   right: 91px;
   font-size: smaller;
 }
 #time {
-  color: aliceblue;
+  color: #a9f113;
   font-size: small;
   position: relative;
   top: 24px;
   right: 32px;
 }
 #follow {
-  color: aliceblue;
+  color: #a9f113;
   position: relative;
   top: 7px;
   left: 90px;
@@ -747,6 +1009,33 @@ hr {
   margin-bottom: 40px;
   border-radius: 35px;
 }
+#fa_compress_camera {
+  display: none;
+  width: 23px;
+  position: relative;
+  padding: 15px;
+  font-size: x-large;
+  cursor: pointer;
+  color: yellowgreen;
+  border: 1px solid;
+  margin-right: 80px;
+  margin-bottom: 40px;
+  border-radius: 35px;
+}
+#fa_expand_camera {
+  display: inline-table;
+  width: 23px;
+  position: relative;
+  padding: 15px;
+  font-size: x-large;
+  cursor: pointer;
+  color: red;
+  border: 1px solid;
+  margin-right: 80px;
+  margin-bottom: 40px;
+  border-radius: 35px;
+}
+
 // ///////////////////////////////////////////@at-root
 #div_background {
   cursor: pointer;
@@ -982,7 +1271,7 @@ hr {
   display: inline-table;
   margin-top: 0px;
 }
-#the_container_video {
+[id^="the_container_video-"] {
   position: relative;
   display: inline-table;
   width: 500px;
@@ -998,22 +1287,79 @@ hr {
 #image_person_number {
   position: absolute;
   width: 60px;
+  cursor: pointer;
   height: 60px;
   bottom: 164px;
   left: 44%;
   border-radius: 60px;
 }
-
-#person_number_microphone {
-  position: relative;
-  right: 39%;
-  bottom: 12px;
-  color: aliceblue;
-  font-size: 20px;
+#label_name_person_room {
+  position: absolute;
+  top: 163px;
+  left: 50%;
+  width: inherit;
+  transform: translate(-50%, 0px);
+  color: aquamarine;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+[id^="person_number_microphone-"] {
+  display: block;
+  position: absolute;
+  right: 94%;
+  bottom: 15px;
+  cursor: pointer;
+  color: rgb(251, 255, 16);
+  font-size: 21px;
+}
+[id^="person_number_microphone_close-"] {
+  display: none;
+  position: absolute;
+  right: 93%;
+  bottom: 15px;
+  cursor: pointer;
+  color: red;
+  font-size: 21px;
+}
+[id^="person_number_video-"] {
+  display: block;
+  position: absolute;
+  right: 85%;
+  bottom: 15px;
+  cursor: pointer;
+  color: rgb(251, 255, 16);
+  font-size: 21px;
+}
+[id^="person_number_video_close-"] {
+  display: none;
+  position: absolute;
+  right: 85%;
+  bottom: 15px;
+  cursor: pointer;
+  color: red;
+  font-size: 21px;
+}
+[id^="person_number_compress-"] {
+  display: none;
+  position: absolute;
+  right: 1%;
+  bottom: 13px;
+  cursor: pointer;
+  color: rgb(251, 255, 16);
+  font-size: 21px;
+}
+[id^="person_number_expand-"] {
+  display: block;
+  position: absolute;
+  right: 1%;
+  bottom: 13px;
+  cursor: pointer;
+  color: rgb(251, 255, 16);
+  font-size: 21px;
 }
 
 @media (max-width: 1055px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 400px;
@@ -1024,22 +1370,75 @@ hr {
     position: absolute;
     width: 60px;
     height: 60px;
+    cursor: pointer;
     bottom: 164px;
     left: 44%;
     border-radius: 60px;
   }
 }
 @media (max-width: 880px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 300px;
     height: 300px;
     border: 1px solid;
   }
+  [id^="person_number_microphone-"] {
+    position: absolute;
+    right: 91%;
+    bottom: 15px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 21px;
+  }
+  [id^="person_number_microphone_close-"] {
+    position: absolute;
+    right: 90%;
+    bottom: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 21px;
+  }
+  [id^="person_number_video-"] {
+    display: block;
+    position: absolute;
+    right: 78%;
+    bottom: 15px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 21px;
+  }
+  [id^="person_number_video_close-"] {
+    display: none;
+    position: absolute;
+    right: 78%;
+    bottom: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 21px;
+  }
+  [id^="person_number_expand-"] {
+    display: block;
+    position: absolute;
+    right: 2%;
+    bottom: 13px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 21px;
+  }
+  [id^="person_number_compress-"] {
+    display: none;
+    position: absolute;
+    right: 2%;
+    bottom: 13px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 21px;
+  }
 }
 @media (max-width: 660px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 249px;
@@ -1048,15 +1447,26 @@ hr {
   }
   #image_person_number {
     position: absolute;
+    cursor: pointer;
     width: 60px;
     height: 60px;
     bottom: 110px;
     left: 41%;
     border-radius: 60px;
   }
+  #label_name_person_room {
+    position: absolute;
+    top: 133px;
+    width: inherit;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    color: aquamarine;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
 }
 @media (max-width: 550px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 200px;
@@ -1068,13 +1478,58 @@ hr {
     width: 45px;
     height: 45px;
     bottom: 110px;
+    cursor: pointer;
     left: 38%;
     border-radius: 60px;
+  }
+  #label_name_person_room {
+    position: absolute;
+    top: 108px;
+    width: inherit;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    color: aquamarine;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  [id^="person_number_microphone-"] {
+    position: absolute;
+    right: 89%;
+    bottom: 15px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 21px;
+  }
+  [id^="person_number_microphone_close-"] {
+    position: absolute;
+    right: 88%;
+    bottom: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 21px;
+  }
+  [id^="person_number_video-"] {
+    display: block;
+    position: absolute;
+    right: 72%;
+    bottom: 15px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 21px;
+  }
+  [id^="person_number_video_close-"] {
+    display: none;
+    position: absolute;
+    right: 72%;
+    bottom: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 21px;
   }
 }
 ////////////////////////////////////////////////////////////@at-root
 @media (max-width: 500px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 218px;
@@ -1155,6 +1610,32 @@ hr {
     border-radius: 35px;
   }
   #fa-microphone-slash {
+    display: inline-table;
+    width: 14px;
+    position: relative;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: red;
+    border: 1px solid;
+    margin-right: 25px;
+    margin-bottom: 40px;
+    border-radius: 35px;
+  }
+  #fa_compress_camera {
+    display: none;
+    width: 14px;
+    position: relative;
+    padding: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: yellowgreen;
+    border: 1px solid;
+    margin-right: 25px;
+    margin-bottom: 40px;
+    border-radius: 35px;
+  }
+  #fa_expand_camera {
     display: inline-table;
     width: 14px;
     position: relative;
@@ -1331,7 +1812,7 @@ hr {
   }
 }
 @media (max-width: 473px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 199px;
@@ -1340,7 +1821,7 @@ hr {
   }
 }
 @media (max-width: 434px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 175px;
@@ -1350,16 +1831,68 @@ hr {
 }
 
 @media (max-width: 388px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 155px;
     height: 208px;
     border: 1px solid;
   }
+  [id^="person_number_microphone-"] {
+    position: absolute;
+    right: 86%;
+    bottom: 15px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 18px;
+  }
+  [id^="person_number_microphone_close-"] {
+    position: absolute;
+    right: 84%;
+    bottom: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+  }
+  [id^="person_number_video-"] {
+    display: block;
+    position: absolute;
+    right: 66%;
+    bottom: 15px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 19px;
+  }
+  [id^="person_number_video_close-"] {
+    display: none;
+    position: absolute;
+    right: 66%;
+    bottom: 15px;
+    cursor: pointer;
+    color: red;
+    font-size: 19px;
+  }
+  [id^="person_number_expand-"] {
+    display: block;
+    position: absolute;
+    right: 3%;
+    bottom: 12px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 19px;
+  }
+  [id^="person_number_compress-"] {
+    display: none;
+    position: absolute;
+    right: 3%;
+    bottom: 12px;
+    cursor: pointer;
+    color: rgb(251, 255, 16);
+    font-size: 19px;
+  }
 }
 @media (max-width: 349px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 130px;
@@ -1372,16 +1905,27 @@ hr {
     height: 45px;
     bottom: 110px;
     left: 33%;
+    cursor: pointer;
     border-radius: 60px;
   }
 }
 @media (max-width: 297px) {
-  #the_container_video {
+  [id^="the_container_video-"] {
     position: relative;
     display: inline-table;
     width: 115px;
     height: 195px;
     border: 1px solid;
+  }
+  #label_name_person_room {
+    position: absolute;
+    top: 102px;
+    width: inherit;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    color: aquamarine;
+    font-size: 8px;
+    letter-spacing: 1px;
   }
 }
 </style>

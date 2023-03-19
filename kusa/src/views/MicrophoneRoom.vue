@@ -12,8 +12,8 @@
         <font-awesome-icon id="fa_microphone" icon="fa-solid fa-microphone" />
         <p id="title_person_room" for="">{{ item.noted }}</p>
         <div id="div_icon_person_room">
-          <font-awesome-icon style="color: aliceblue" icon="fa-solid fa-user" />
-          <label style="color: aliceblue; margin-left: 5px" for="">{{
+          <font-awesome-icon style="color: #a9f113" icon="fa-solid fa-user" />
+          <label style="color: #a9f113; margin-left: 5px" for="">{{
             item.users
           }}</label>
         </div>
@@ -525,7 +525,7 @@ export default {
   right: 6px;
 }
 #fa_microphone {
-  color: aliceblue;
+  color: #a9f113;
   position: relative;
   left: 11px;
   bottom: 19px;
@@ -537,21 +537,21 @@ export default {
   top: 17px;
 }
 #div_icon_person_room {
-  color: aliceblue;
+  color: #a9f113;
   position: relative;
   top: 39px;
   right: 91px;
   font-size: smaller;
 }
 #time {
-  color: aliceblue;
+  color: #a9f113;
   font-size: small;
   position: relative;
   top: 24px;
   right: 32px;
 }
 #follow {
-  color: aliceblue;
+  color: #a9f113;
   position: relative;
   top: 7px;
   left: 90px;

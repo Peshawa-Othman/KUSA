@@ -1,5 +1,5 @@
 <template>
-  <h2 id="logo_name">KUSA</h2>
+  <!-- <h2 id="logo_name">KUSA</h2> -->
   <body>
     <router-link :to="{ name: 'Home' }">
       <button style="--clr: #39ff14">
