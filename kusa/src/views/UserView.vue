@@ -549,12 +549,14 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import AddPost from "../components/AddPost.vue";
 import CreatMicrophoneRoom from "../components/CreatMicrophoneRoom.vue";
 import CreatVideoRoom from "../components/CreatVideoRoom.vue";
 export default {
   setup() {
     var toast = "";
+    var the_code = ref("");
     const test = [
       {
         image:
@@ -712,6 +714,7 @@ export default {
       add_post,
       create_microphone_room,
       create_video_room,
+      the_code,
       test,
     };
   },

@@ -316,7 +316,8 @@
 <script>
 import AgoraRTM from "agora-rtm-sdk";
 export default {
-  setup() {
+  props: ["id"],
+  setup(props) {
     let APP_ID = "5f65794758894bbe9587d0647847e740";
 
     let token = null;
@@ -343,7 +344,7 @@ export default {
       client = await AgoraRTM.createInstance(APP_ID);
       await client.login({ uid, token });
 
-      channel = client.createChannel("main");
+      channel = client.createChannel(props.id);
       await channel.join();
       channel.on("MemberJoined", handleuserjoined);
       channel.on("MemberLeft", handleUserLeft);

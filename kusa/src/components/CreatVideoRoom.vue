@@ -10,6 +10,8 @@
         <header>Create video room</header>
         <form action="#">
           <textarea
+            name="invite_link"
+            v-model="the_code"
             maxlength="30"
             placeholder="What's your title ?"
             spellcheck="false"
@@ -17,20 +19,24 @@
           ></textarea>
           <button>Create room</button>
         </form>
+        <!-- <router-link :to="{ name: 'Video_room', params: { id: the_code } }"> -->
         <button @click="video_room_close" id="coloce_button">Close</button>
+        <!-- </router-link> -->
       </section>
     </div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   setup() {
+    var the_code = ref("");
     function video_room_close() {
       document.querySelector(".container3").style.display = "none";
       document.querySelector("#div_post").style.display = "none";
     }
-    return { video_room_close };
+    return { video_room_close, the_code };
   },
 };
 </script>

@@ -54,9 +54,10 @@ const routes = [
     component: MicrophoneRoom,
   },
   {
-    path: "/videoroom",
+    path: "/videoroom/:id",
     name: "Video_room",
     component: VideoRoom,
+    props: true,
   },
   {
     path: "/",
