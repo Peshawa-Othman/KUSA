@@ -450,6 +450,29 @@ export default {
       await channel.leave();
       await client.logout();
     };
+
+    let toggleCamera = async () => {
+      let videoTrack = localStream
+        .getTracks()
+        .find((track) => track.kind === "video");
+      if (videoTrack.enabled) {
+        videoTrack.enabled = false;
+      } else {
+        videoTrack.enabled = true;
+      }
+    };
+
+    let toggleMic = async () => {
+      let audioTrack = localStream
+        .getTracks()
+        .find((track) => track.kind === "audio");
+      if (audioTrack.enabled) {
+        audioTrack.enabled = false;
+      } else {
+        audioTrack.enabled = true;
+      }
+    };
+
     window.addEventListener("beforeunload", leaveChannel);
     init();
     const test = [
@@ -645,11 +668,13 @@ export default {
     ];
 
     function microphone_close() {
+      toggleMic();
       document.getElementById("fa-microphone-slash").style.display =
         "inline-table";
       document.getElementById("fa-microphone").style.display = "none";
     }
     function microphone_open() {
+      toggleMic();
       document.getElementById("fa-microphone-slash").style.display = "none";
       document.getElementById("fa-microphone").style.display = "inline-table";
     }
@@ -763,11 +788,13 @@ export default {
       document.getElementById("zoom_the_user_video").style.display = "none";
     }
     function fa_compress_camera() {
+      toggleCamera();
       document.getElementById("fa_compress_camera").style.display = "none";
       document.getElementById("fa_expand_camera").style.display =
         "inline-table";
     }
     function fa_expand_camera() {
+      toggleCamera();
       document.getElementById("fa_expand_camera").style.display = "none";
       document.getElementById("fa_compress_camera").style.display =
         "inline-table";
@@ -1162,7 +1189,7 @@ hr {
   border-radius: 35px;
 }
 #fa-microphone {
-  display: none;
+  display: inline-table;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1175,7 +1202,7 @@ hr {
   border-radius: 35px;
 }
 #fa-microphone-slash {
-  display: inline-table;
+  display: none;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1188,7 +1215,7 @@ hr {
   border-radius: 35px;
 }
 #fa_compress_camera {
-  display: none;
+  display: inline-table;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1201,7 +1228,7 @@ hr {
   border-radius: 35px;
 }
 #fa_expand_camera {
-  display: inline-table;
+  display: none;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1808,7 +1835,7 @@ hr {
     border-radius: 35px;
   }
   #fa_compress_camera {
-    display: none;
+    display: inline-table;
     width: 14px;
     position: relative;
     padding: 12px;
@@ -1821,7 +1848,7 @@ hr {
     border-radius: 35px;
   }
   #fa_expand_camera {
-    display: inline-table;
+    display: none;
     width: 14px;
     position: relative;
     padding: 12px;
