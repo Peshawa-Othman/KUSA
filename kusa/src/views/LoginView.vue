@@ -21,7 +21,7 @@
       />
     </div>
   </div>
-  <router-link :to="{ name: 'Home' }">
+  <router-link :to="{ name: 'User' }">
     <button style="--clr: #0ff0fc"><span>Login</span><i></i></button>
   </router-link>
   <router-link :to="{ name: 'Register' }">

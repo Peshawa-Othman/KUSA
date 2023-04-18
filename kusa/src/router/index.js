@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import ForgotPassword from "../views/ForgotPassword.vue";
@@ -13,11 +12,6 @@ import MicrophoneRoom from "../views/MicrophoneRoom.vue";
 import VideoRoom from "../views/VideoRoom.vue";
 
 const routes = [
-  {
-    path: "/home",
-    name: "Home",
-    component: HomeView,
-  },
   {
     path: "/microphone",
     name: "Microphone",
@@ -78,7 +72,7 @@ const routes = [
     //make a 404
     path: "/:catchAll(.*)",
     name: "Error",
-    component: HomeView,
+    component: UserView,
   },
 ];
 

@@ -1,11 +1,6 @@
 <template>
   <!-- <h2 id="logo_name">KUSA</h2> -->
   <body>
-    <router-link :to="{ name: 'Home' }">
-      <button style="--clr: #39ff14">
-        <span><font-awesome-icon icon="fa-solid fa-home" /></span><i></i>
-      </button>
-    </router-link>
     <router-link :to="{ name: 'Microphone' }">
       <button style="--clr: #ff44cc">
         <span><font-awesome-icon icon="fa-solid fa-microphone" /></span><i></i>

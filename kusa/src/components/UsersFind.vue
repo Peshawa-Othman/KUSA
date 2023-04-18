@@ -15,42 +15,7 @@
       </div>
     </div>
   </div>
-  <div @click="div_background" id="div_background"></div>
-  <font-awesome-icon
-    @click="fa_users_line"
-    id="fa_users_line"
-    icon="fa-solid fa-users-line"
-  />
-  <div id="div_show_post">
-    <div id="box_post" v-for="item in test" :key="item">
-      <img
-        v-if="item.image != ``"
-        id="box_image"
-        :src="item.image"
-        alt="person"
-      />
-      <div>
-        <img id="box_person_image" :src="item.image_person" alt="person" />
-        <span id="box_person_name">{{ item.name }}</span>
-      </div>
-      <div>
-        <p id="box_person_text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
-          neque excepturi laborum quaerat eligendi accusamus iusto fugit.
-        </p>
-      </div>
-      <div id="box_person_like">
-        <div style="position: relative; width: auto; height: 12px">
-          <font-awesome-icon id="like" icon="fa-solid fa-thumbs-up" /><span
-            id="like_number"
-            >45</span
-          >
-          <span id="unlike_number">55</span>
-          <font-awesome-icon id="unlike" icon="fa-solid fa-thumbs-down" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <div @click="background_users" id="background_users"></div>
 </template>
 
 <script>
@@ -76,7 +41,8 @@ export default {
           "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
       },
       {
-        image: "",
+        image:
+          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
         name: "peshawa Othman Rashid",
         language: "kurdy",
         location: "kurdistan",
@@ -129,35 +95,43 @@ export default {
           "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
       },
     ];
-
-    function div_background() {
-      document.getElementById("div_container_users").style.left = "-103%";
-      document.getElementById("div_background").style.display = "none";
-      document.getElementById("fa_users_line").style.color = "#888";
-    }
-    function fa_users_line() {
-      document.getElementById("div_container_users").style.left = "8%";
-      document.getElementById("div_background").style.display = "block";
-      document.getElementById("fa_users_line").style.color = "#becf21";
+    function background_users() {
+      document.getElementById("div_container_users").style.left = "103%";
+      document.getElementById("div_container_users").style.transform =
+        "translate(0%, 0px)";
+      document.getElementById("background_users").style.display = "none";
     }
     return {
-      div_background,
-      fa_users_line,
       test,
+      background_users,
     };
   },
 };
 </script>
 
 <style scoped lang="scss">
+#background_users {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #10161c33;
+  cursor: pointer;
+}
 #div_container_users {
-  position: relative;
-  float: right;
+  position: fixed;
+  z-index: 2;
+  left: 103%;
+  transform: translate(0%, 0px);
   width: 300px;
   margin-top: 30px;
   height: 500px;
   background: #10161c;
   box-shadow: 0px 0px 5px 2px black;
+  transition: left 1s;
+  transition: transform 0.1s;
 }
 #div_search {
   position: relative;
@@ -227,39 +201,7 @@ export default {
 #div_person_info:hover {
   box-shadow: 0px 0px 7px 2px black;
 }
-#div_show_post {
-  position: relative;
-  float: left;
-  width: 72%;
-  overflow-y: scroll;
-  height: 500px;
-  top: 32px;
-  box-shadow: 0px 0px 5px 2px black;
-}
-#div_show_post::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
 
-#div_show_post::-webkit-scrollbar-track {
-  background-color: #0000007c;
-}
-
-#div_show_post::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
-}
-#fa_users_line {
-  display: none;
-  position: relative;
-  color: #888;
-  font-size: 30px;
-  float: right;
-  /* left: 33px; */
-  top: 54px;
-  cursor: pointer;
-  transition: color 0.5s;
-}
 #person_image_scroll {
   position: relative;
   width: 50px;
@@ -321,120 +263,6 @@ export default {
 #person_follow_scroll:hover {
   box-shadow: 0px 0px 7px 1px rgb(255, 255, 255);
 }
-#box_post {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  position: relative;
-  // border: 1px solid;
-  box-shadow: 0px 0px 4px 2px black;
-  max-width: fit-content;
-  max-height: fit-content;
-  min-width: 200px;
-  min-height: 200px;
-  left: 50%;
-  transform: translate(-50%, 0px);
-}
-#box_post:hover {
-  box-shadow: 0px 0px 10px 2px black;
-}
-#box_image {
-  position: relative;
-  object-fit: contain;
-  width: 235px;
-  height: 232px;
-}
-#box_person_image {
-  position: relative;
-  width: 31px;
-  right: 17px;
-  top: 4px;
-  height: 31px;
-  border-radius: 25px;
-  cursor: pointer;
-}
-#box_person_image:hover {
-  box-shadow: 0px 0px 4px 1px #fff;
-}
-#box_person_name {
-  position: relative;
-  font-size: 14px;
-  color: aliceblue;
-  bottom: 9px;
-}
-#box_person_text {
-  position: relative;
-  width: 235px;
-  color: aliceblue;
-  font-size: 14px;
-  text-align: left;
-  left: 5px;
-}
-#box_person_like {
-  position: relative;
-  width: auto;
-  // border: 1px solid;
-  padding: 8px;
-}
-#like {
-  position: relative;
-  float: left;
-  margin-right: 5px;
-  cursor: pointer;
-  color: #dfdfdf;
-}
-#unlike {
-  position: relative;
-  float: right;
-  margin-right: 5px;
-  cursor: pointer;
-  color: #dfdfdf;
-}
-#like_number {
-  position: relative;
-  float: left;
-  color: #dfdfdf;
-}
-#unlike_number {
-  position: relative;
-  float: right;
-  color: #dfdfdf;
-}
-
-@media (max-width: 1115px) {
-  #div_container_users {
-    position: fixed;
-    z-index: 3;
-    left: -103%;
-    width: 300px;
-    margin-top: 30px;
-    height: 500px;
-    background: #10161c;
-    box-shadow: 0px 0px 5px 2px black;
-    transition: left 1s;
-  }
-  #div_background {
-    display: none;
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    cursor: pointer;
-    bottom: 0px;
-    height: 100%;
-    z-index: 2;
-    background: #0000002b;
-  }
-  #div_show_post {
-    position: relative;
-    width: -webkit-fill-available;
-    height: 440px;
-    top: 32px;
-    box-shadow: 0px 0px 5px 2px black;
-    margin-top: 56px;
-  }
-  #fa_users_line {
-    display: block;
-  }
-}
 @media (max-width: 500px) {
   #div_container_users {
     width: 240px;
@@ -447,6 +275,7 @@ export default {
   #div_scroll {
     width: 240px;
     height: 348px;
+    overflow-x: hidden;
   }
   #person_image_scroll {
     width: 40px;

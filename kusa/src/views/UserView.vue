@@ -1,7 +1,9 @@
 <template>
-  <add-post></add-post>
   <creat-microphone-room></creat-microphone-room>
   <creat-video-room></creat-video-room>
+  <users-find></users-find>
+  <followers-view></followers-view>
+  <following-view></following-view>
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
     rel="stylesheet"
@@ -11,365 +13,7 @@
     src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
     id="zoom_person_image"
   />
-  <img
-    @click="none_post_image"
-    src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-    id="zoom_post_image"
-  />
-  <p id="zoom_post_text">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus
-    nostrum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero,
-    possimus nostrum! consectetur adipisicing elit.
-  </p>
   <div id="zoom_person_div"></div>
-  <div id="show_following">
-    <div class="toast" id="toast">
-      <div class="toast-body"></div>
-      <button @click="no_bottons" id="no">NO</button>
-      <button id="yes">YES</button>
-    </div>
-    <div id="div_toast"></div>
-    <div id="div_search">
-      <font-awesome-icon
-        @click="icon_close"
-        id="icon_close"
-        icon="fa-solid fa-xmark"
-      />
-      <input id="input_search" type="search" placeholder="Username" />
-      <font-awesome-icon id="icon_search" icon="fa-solid fa-magnifying-glass" />
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button @click="followeds" id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Followed</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-  </div>
-  <!-- followers //////////////////////////////-->
-  <!-- followers //////////////////////////////-->
-  <!-- followers //////////////////////////////-->
-  <div id="show_followers">
-    <div class="toast2" id="toast2">
-      <div class="toast-body2"></div>
-      <button @click="no_bottons2" id="no2">NO</button>
-      <button id="yes2">YES</button>
-    </div>
-    <div id="div_toast2"></div>
-    <div id="div_search">
-      <font-awesome-icon
-        @click="icon_close"
-        id="icon_close"
-        icon="fa-solid fa-xmark"
-      />
-      <input id="input_search" type="search" placeholder="Username" />
-      <font-awesome-icon id="icon_search" icon="fa-solid fa-magnifying-glass" />
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button @click="followers" id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-    <div
-      style="
-        width: 100%;
-        height: 100px;
-        background: #132020;
-        position: relative;
-        top: -48px;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
-          0 0 10px rgb(255 255 255 / 39%);
-      "
-    >
-      <img
-        id="following_person_image"
-        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
-        alt="peshawa"
-      />
-      <label id="following_person_name" for="">peshawa Othman Rashid</label>
-      <label id="following_person_language" for="">Language: Kurdy</label>
-      <label id="following_person_location" for="">Location: Kurdistan</label>
-      <button id="followed_button">Following</button>
-      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
-    </div>
-  </div>
-  <!-- Followers /////////////////////////////////////////////////////// -->
-  <!-- Followers /////////////////////////////////////////////////////// -->
-  <!-- Followers /////////////////////////////////////////////////////// -->
   <body>
     <div style="margin-top: 200px; margin-bottom: 120px" class="main-content">
       <!-- Header -->
@@ -401,14 +45,14 @@
                 >
                   <router-link :to="{ name: 'Edit_profile' }">
                     <a style="color: #10161c" class="btn btn-sm btn-info mr-4"
-                      >edit profile</a
+                      >Edit Profile</a
                     >
                   </router-link>
                   <a
-                    @click="add_post"
+                    @click="div_container_users"
                     style="color: wheat"
                     class="btn btn-sm btn-default float-right"
-                    >add post
+                    >Find Users
                   </a>
                 </div>
               </div>
@@ -419,7 +63,7 @@
                       class="card-profile-stats d-flex justify-content-center mt-md-6"
                     >
                       <div
-                        @click="show_following"
+                        @click="div_container_following"
                         class="following"
                         style="cursor: pointer"
                       >
@@ -431,7 +75,7 @@
                         <span class="description"></span>
                       </div>
                       <div
-                        @click="show_followers"
+                        @click="div_container_followers"
                         class="following"
                         style="cursor: pointer"
                       >
@@ -463,17 +107,20 @@
                 </div>
                 <div class="text-center">
                   <h3 style="color: aqua">Peshawa Othman Rashid</h3>
-                  <div style="color: aqua" class="h5 font-weight-300">
+                  <div
+                    style="color: aqua; margin-bottom: 7px; margin-top: 7px"
+                    class="h5 font-weight-300"
+                  >
                     <i class="ni location_pin mr-2"></i>@Peshawa_12345
                   </div>
-                  <div style="color: aqua">
+                  <div style="color: aqua; margin-bottom: 7px; margin-top: 7px">
                     <i class="ni education_hat mr-2"></i>Country: Kurdistan
                   </div>
-                  <div style="color: aqua">
+                  <div style="color: aqua; margin-bottom: 7px; margin-top: 7px">
                     <i class="ni education_hat mr-2"></i>Language: kurdy
                   </div>
                   <hr class="my-4" />
-                  <p style="color: aqua">
+                  <p id="BIOS">
                     Ryan — the name taken by Melbourne-raised, Brooklyn-based
                     Nick Murphy — writes, performs and records all of his own
                     music.
@@ -494,54 +141,6 @@
               </div>
             </div>
           </div>
-          <div style="background: #10161c" class="col-xl-8 order-xl-1">
-            <div style="background: #10161c" class="card bg-secondary shadow">
-              <div style="background: #10161c" class="card-body">
-                <form
-                  style="position: relative; overflow-y: scroll; height: 595px"
-                >
-                  <div id="box_post" v-for="item in test" :key="item">
-                    <img
-                      v-if="item.image != ``"
-                      id="box_image"
-                      :src="item.image"
-                      alt="person"
-                    />
-                    <div>
-                      <!-- <img
-                        id="box_person_image"
-                        :src="item.image_person"
-                        alt="person"
-                      /> -->
-                      <span id="box_person_name">{{ item.name }}</span>
-                    </div>
-                    <div>
-                      <p id="box_person_text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Dolorem, neque excepturi laborum quaerat eligendi
-                        accusamus iusto fugit.
-                      </p>
-                    </div>
-                    <div id="box_person_like">
-                      <div
-                        style="position: relative; width: auto; height: 12px"
-                      >
-                        <font-awesome-icon
-                          id="like"
-                          icon="fa-solid fa-thumbs-up"
-                        /><span id="like_number">45</span>
-                        <span id="unlike_number">55</span>
-                        <font-awesome-icon
-                          id="unlike"
-                          icon="fa-solid fa-thumbs-down"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -550,86 +149,14 @@
 
 <script>
 import { ref } from "vue";
-import AddPost from "../components/AddPost.vue";
 import CreatMicrophoneRoom from "../components/CreatMicrophoneRoom.vue";
 import CreatVideoRoom from "../components/CreatVideoRoom.vue";
+import UsersFind from "../components/UsersFind.vue";
+import FollowersView from "../components/FollowersView.vue";
+import FollowingView from "../components/FollowingView.vue";
 export default {
   setup() {
-    var toast = "";
     var the_code = ref("");
-    const test = [
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image: "",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-      {
-        image:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-        name: "peshawa Othman Rashid",
-        language: "kurdy",
-        location: "kurdistan",
-        image_person:
-          "https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg",
-      },
-    ];
     function zoom_person_image() {
       document.getElementById("zoom_person_image").style.display = "block";
       document.getElementById("zoom_person_div").style.display = "block";
@@ -637,57 +164,6 @@ export default {
     function none_person_image() {
       document.getElementById("zoom_person_image").style.display = "none";
       document.getElementById("zoom_person_div").style.display = "none";
-    }
-    function zoom_post_image() {
-      document.getElementById("zoom_post_image").style.display = "block";
-      document.getElementById("zoom_person_div").style.display = "block";
-      document.getElementById("zoom_post_text").style.display = "block";
-    }
-    function none_post_image() {
-      document.getElementById("zoom_post_image").style.display = "none";
-      document.getElementById("zoom_person_div").style.display = "none";
-      document.getElementById("zoom_post_text").style.display = "none";
-    }
-    function show_following() {
-      document.getElementById("show_following").style.display = "block";
-      document.getElementById("zoom_person_div").style.display = "block";
-    }
-    function show_followers() {
-      document.getElementById("show_followers").style.display = "block";
-      document.getElementById("zoom_person_div").style.display = "block";
-    }
-    function icon_close() {
-      document.getElementById("show_followers").style.display = "none";
-      document.getElementById("show_following").style.display = "none";
-      document.getElementById("zoom_person_div").style.display = "none";
-    }
-
-    function followeds() {
-      toast = document.getElementById("toast");
-      document.getElementById("div_toast").style.display = "block";
-      toast.querySelector(".toast-body").innerHTML =
-        "Are you sure of unfollowing ?";
-      toast.classList.add("visible");
-    }
-    function no_bottons() {
-      toast.classList.remove("visible");
-      document.getElementById("div_toast").style.display = "none";
-    }
-    function followers() {
-      toast = document.getElementById("toast2");
-      document.getElementById("div_toast2").style.display = "block";
-      toast.querySelector(".toast-body2").innerHTML =
-        "Are you sure of following ?";
-      toast.classList.add("visible");
-    }
-    function no_bottons2() {
-      toast.classList.remove("visible");
-      document.getElementById("div_toast2").style.display = "none";
-    }
-    function add_post() {
-      // document.getElementById("add_post").style.display = "block";
-      document.querySelector(".container").style.display = "block";
-      document.querySelector("#div_post").style.display = "block";
     }
     function create_microphone_room() {
       // document.getElementById("add_post").style.display = "block";
@@ -699,230 +175,46 @@ export default {
       document.querySelector(".container3").style.display = "block";
       document.querySelector("#div_post").style.display = "block";
     }
+    function div_container_users() {
+      document.getElementById("div_container_users").style.left = "50%";
+      document.getElementById("div_container_users").style.transform =
+        "translate(-50%, 0px)";
+      document.getElementById("background_users").style.display = "block";
+    }
+    function div_container_followers() {
+      document.getElementById("div_container_followers").style.left = "50%";
+      document.getElementById("div_container_followers").style.transform =
+        "translate(-50%, 0px)";
+      document.getElementById("background_followers").style.display = "block";
+    }
+    function div_container_following() {
+      document.getElementById("div_container_following").style.left = "50%";
+      document.getElementById("div_container_following").style.transform =
+        "translate(-50%, 0px)";
+      document.getElementById("background_following").style.display = "block";
+    }
     return {
+      the_code,
       zoom_person_image,
       none_person_image,
-      zoom_post_image,
-      none_post_image,
-      show_following,
-      icon_close,
-      followeds,
-      no_bottons,
-      show_followers,
-      followers,
-      no_bottons2,
-      add_post,
       create_microphone_room,
       create_video_room,
-      the_code,
-      test,
+      div_container_users,
+      div_container_followers,
+      div_container_following,
     };
   },
-  components: { AddPost, CreatMicrophoneRoom, CreatVideoRoom },
+  components: {
+    CreatMicrophoneRoom,
+    CreatVideoRoom,
+    UsersFind,
+    FollowersView,
+    FollowingView,
+  },
 };
 </script>
 
 <style scoped lang="scss">
-form::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-form::-webkit-scrollbar-track {
-  background-color: #0000007c;
-}
-
-form::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
-}
-#box_post {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  position: relative;
-  // border: 1px solid;
-  box-shadow: 0px 0px 4px 2px black;
-  max-width: fit-content;
-  max-height: fit-content;
-  min-width: 200px;
-  min-height: 200px;
-  left: 50%;
-  transform: translate(-50%, 0px);
-}
-#box_post:hover {
-  box-shadow: 0px 0px 10px 2px black;
-}
-#box_image {
-  position: relative;
-  object-fit: contain;
-  width: 235px;
-  height: 232px;
-}
-#box_person_image {
-  position: relative;
-  width: 31px;
-  right: 17px;
-  top: 4px;
-  height: 31px;
-  border-radius: 25px;
-  cursor: pointer;
-}
-#box_person_image:hover {
-  box-shadow: 0px 0px 4px 1px #fff;
-}
-#box_person_name {
-  position: relative;
-  font-size: 14px;
-  color: aliceblue;
-  bottom: 0px;
-  left: 40px;
-}
-#box_person_text {
-  position: relative;
-  width: 235px;
-  color: aliceblue;
-  margin-top: 8px;
-  font-size: 14px;
-  text-align: left;
-  left: 5px;
-}
-#box_person_like {
-  position: relative;
-  width: auto;
-  // border: 1px solid;
-  padding: 8px;
-}
-#like {
-  position: relative;
-  float: left;
-  margin-right: 5px;
-  cursor: pointer;
-  color: #dfdfdf;
-}
-#unlike {
-  position: relative;
-  float: right;
-  margin-right: 5px;
-  cursor: pointer;
-  color: #dfdfdf;
-}
-#like_number {
-  position: relative;
-  float: left;
-  color: #dfdfdf;
-}
-#unlike_number {
-  position: relative;
-  float: right;
-  color: #dfdfdf;
-}
-
-// ////////////////////////////////////////////////////////////////////////////////////////////////@at-root
-#input_search {
-  position: relative;
-  width: 208px;
-  top: 5px;
-  // float: left;
-  margin-left: 0px;
-  padding: 5px;
-  outline: 0px;
-  border-radius: 6px;
-}
-#input_search:focus {
-  position: relative;
-  width: 208px;
-  top: 5px;
-  // float: left;
-  margin-left: 0px;
-  padding: 5px;
-  outline: 0px;
-  border-radius: 6px;
-  border: 2px solid #819a36f2;
-}
-#div_search {
-  position: relative;
-  width: 100%;
-  height: 115px;
-}
-#following_person_image {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  float: left;
-  margin-left: 10px;
-  margin-top: 18px;
-  margin-right: 10px;
-  border-radius: 55px;
-  cursor: pointer;
-}
-#following_person_image:hover {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  float: left;
-  margin-left: 10px;
-  margin-top: 16px;
-  margin-right: 10px;
-  border-radius: 55px;
-}
-#following_person_name {
-  width: fit-content;
-  position: relative;
-  float: left;
-  font-size: 10px;
-  color: aqua;
-  bottom: -25px;
-  font-weight: bolder;
-}
-#following_person_language {
-  width: fit-content;
-  position: relative;
-  float: left;
-  font-size: 10px;
-  color: aqua;
-  font-weight: bolder;
-  top: 47px;
-  right: 118px;
-}
-#following_person_location {
-  width: fit-content;
-  position: relative;
-  float: left;
-  font-size: 10px;
-  color: aqua;
-  font-weight: bolder;
-  top: 50px;
-}
-#followed_button {
-  width: fit-content;
-  position: relative;
-  float: right;
-  font-size: 12px;
-  margin-right: 3px;
-  bottom: -23px;
-  padding: 2px;
-  background: cornflowerblue;
-  color: aqua;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: background 1s;
-  transition: color 1s;
-  transition: bottom;
-}
-#followed_button:hover {
-  width: fit-content;
-  position: relative;
-  float: right;
-  font-size: 12px;
-  margin-right: 3px;
-  bottom: -20px;
-  padding: 2px;
-  background: #7eb200;
-  color: black;
-  outline: none;
-  border: none;
-}
 #zoom_person_image {
   display: none;
   position: fixed;
@@ -934,32 +226,6 @@ form::-webkit-scrollbar-thumb {
   margin-right: 5px;
   z-index: 3;
   cursor: pointer;
-}
-#zoom_post_image {
-  display: none;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0px);
-  width: 300px;
-  height: 300px;
-  margin-left: 5px;
-  margin-right: 5px;
-  z-index: 3;
-  cursor: pointer;
-}
-#zoom_post_text {
-  display: none;
-  position: fixed;
-  text-align: left;
-  left: 50%;
-  top: 390px;
-  transform: translate(-50%, 0px);
-  width: 300px;
-  height: fit-content;
-  margin-left: 5px;
-  margin-right: 5px;
-  color: antiquewhite;
-  z-index: 3;
 }
 #zoom_person_div {
   display: none;
@@ -973,111 +239,6 @@ form::-webkit-scrollbar-thumb {
   height: 100%;
   z-index: 2;
   background: rgb(10 7 7 / 22%);
-}
-#show_following {
-  display: none;
-  position: fixed;
-  margin: 0px;
-  left: 50%;
-  transform: translate(-50%, 0px);
-  width: 300px;
-  max-width: 300px;
-  height: 550px;
-  z-index: 2;
-  background: rgb(16, 22, 28);
-  box-shadow: 0px 0px 8px 1px black;
-  overflow-y: scroll;
-}
-#show_following::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-#show_following::-webkit-scrollbar-track {
-  background-color: #0000007c;
-}
-
-#show_following::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
-}
-#show_followers {
-  display: none;
-  position: fixed;
-  margin: 0px;
-  left: 50%;
-  transform: translate(-50%, 0px);
-  width: 300px;
-  max-width: 300px;
-  height: 550px;
-  z-index: 2;
-  background: rgb(16, 22, 28);
-  box-shadow: 0px 0px 8px 1px black;
-  overflow-y: scroll;
-}
-#show_followers::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-#show_followers::-webkit-scrollbar-track {
-  background-color: #0000007c;
-}
-
-#show_followers::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 5px;
-}
-.following:hover .description {
-  color: #abbeda;
-}
-.following:hover {
-  position: relative;
-  bottom: 5px;
-}
-#icon_search {
-  font-size: 22px;
-  color: brown;
-  border: 1px solid;
-  cursor: pointer;
-  padding: 4px;
-  position: relative;
-  border-radius: 5px;
-  top: 14px;
-  left: 3px;
-}
-#icon_search:hover {
-  font-size: 22px;
-  color: #b1b1ff;
-  border: 1px solid red;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#icon_close {
-  font-size: 22px;
-  color: brown;
-  border: 1px solid;
-  cursor: pointer;
-  padding: 4px;
-  padding-left: 7px;
-  padding-right: 7px;
-  position: relative;
-  border-radius: 5px;
-  top: 14px;
-  left: -2px;
-}
-#icon_close:hover {
-  font-size: 22px;
-  color: red;
-  border: 1px solid grey;
-  cursor: pointer;
-  padding: 4px;
-  padding-left: 7px;
-  padding-right: 7px;
-  position: relative;
-  border-radius: 5px;
-  top: 14px;
-  left: -2px;
 }
 :root {
   --blue: #5e72e4;
@@ -1116,290 +277,19 @@ form::-webkit-scrollbar-thumb {
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
-
+#BIOS {
+  color: aqua;
+  width: 100%;
+  max-width: 413px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  margin-bottom: 20px;
+}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html {
-  font-family: sans-serif;
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
-figcaption,
-footer,
-header,
-main,
-nav,
-section {
-  display: block;
-}
-
-body {
-  font-family: Open Sans, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0;
-  text-align: left;
-  color: #525f7f;
-  background-color: #f8f9fe;
-}
-
-[tabindex="-1"]:focus {
-  outline: 0 !important;
-}
-
-hr {
-  overflow: visible;
-  box-sizing: content-box;
-  height: 0;
-}
-
-h1,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-address {
-  font-style: normal;
-  line-height: inherit;
-  margin-bottom: 1rem;
-}
-
-ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-ul ul {
-  margin-bottom: 0;
-}
-
-dfn {
-  font-style: italic;
-}
-
-strong {
-  font-weight: bolder;
-}
-
-a {
-  text-decoration: none;
-  color: #5e72e4;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #233dd2;
-}
-
-a:not([href]):not([tabindex]) {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:not([href]):not([tabindex]):hover,
-a:not([href]):not([tabindex]):focus {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:not([href]):not([tabindex]):focus {
-  outline: 0;
-}
-
-code {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  font-size: 1em;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
-caption {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  caption-side: bottom;
-  text-align: left;
-  color: #8898aa;
-}
-
-label {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-button {
-  border-radius: 0;
-}
-
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
-input,
-button,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-}
-
-button,
-input {
-  overflow: visible;
-}
-
-button {
-  text-transform: none;
-}
-
-// button,
-// html [type='button'],
-// [type='reset'],
-// [type='submit'] {
-//   -webkit-appearance: button;
-// }
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-// input[type='date'],
-// input[type='time'],
-// input[type='datetime-local'],
-// input[type='month'] {
-//   -webkit-appearance: listbox;
-// }
-
-textarea {
-  overflow: auto;
-  resize: vertical;
-}
-
-legend {
-  font-size: 1.5rem;
-  line-height: inherit;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 0.5rem;
-  padding: 0;
-  white-space: normal;
-  color: inherit;
-}
-
-progress {
-  vertical-align: baseline;
-}
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-// [type='search'] {
-//   outline-offset: -2px;
-//   -webkit-appearance: none;
-// }
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
-  -webkit-appearance: button;
-}
-
-[hidden] {
-  display: none !important;
-}
-
-h1,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: inherit;
-  font-weight: 600;
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-  color: #32325d;
-}
-
-h1,
-.h1 {
-  font-size: 1.625rem;
-}
-
-h3,
-.h3 {
-  font-size: 1.0625rem;
-}
-
-h4,
-.h4 {
-  font-size: 0.9375rem;
-}
-
-h5,
-.h5 {
-  font-size: 0.8125rem;
-}
-
-h6,
-.h6 {
-  font-size: 0.625rem;
-}
-
-.display-2 {
-  font-size: 2.75rem;
-  font-weight: 600;
-  line-height: 1.5;
 }
 
 hr {
@@ -1407,48 +297,6 @@ hr {
   margin-bottom: 2rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-code {
-  font-size: 87.5%;
-  word-break: break-word;
-  color: #f3a4b5;
-}
-
-a > code {
-  color: inherit;
-}
-
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
 }
 
 .container-fluid {
@@ -1499,91 +347,6 @@ a > code {
 .col-8 {
   max-width: 66.66667%;
   flex: 0 0 66.66667%;
-}
-
-@media (min-width: 768px) {
-  .col-md-10 {
-    max-width: 83.33333%;
-    flex: 0 0 83.33333%;
-  }
-
-  .col-md-12 {
-    max-width: 100%;
-    flex: 0 0 100%;
-  }
-}
-
-@media (min-width: 992px) {
-  .col-lg-3 {
-    max-width: 25%;
-    flex: 0 0 25%;
-  }
-
-  .col-lg-4 {
-    max-width: 33.33333%;
-    flex: 0 0 33.33333%;
-  }
-
-  .col-lg-6 {
-    max-width: 50%;
-    flex: 0 0 50%;
-  }
-
-  .col-lg-7 {
-    max-width: 58.33333%;
-    flex: 0 0 58.33333%;
-  }
-
-  .order-lg-2 {
-    order: 2;
-  }
-}
-
-@media (min-width: 1200px) {
-  .col-xl-4 {
-    max-width: 33.33333%;
-    flex: 0 0 33.33333%;
-  }
-
-  .col-xl-6 {
-    max-width: 50%;
-    flex: 0 0 50%;
-  }
-
-  .col-xl-8 {
-    max-width: 66.66667%;
-    flex: 0 0 66.66667%;
-  }
-
-  .order-xl-1 {
-    order: 1;
-  }
-
-  .order-xl-2 {
-    order: 2;
-  }
-}
-
-.form-control {
-  font-size: 1rem;
-  line-height: 1.5;
-  display: block;
-  width: 100%;
-  height: calc(2.75rem + 2px);
-  padding: 0.625rem 0.75rem;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  color: #8898aa;
-  border: 1px solid #cad1d7;
-  border-radius: 0.375rem;
-  // background-color: #fff;
-  background-clip: padding-box;
-  box-shadow: none;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  .form-control {
-    transition: none;
-  }
 }
 
 .form-control::-ms-expand {
@@ -3338,196 +2101,6 @@ a {
   }
 }
 
-// //////////////////////////////////////tost
-.toast {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-
-  transform: translateY(100%);
-  opacity: 0;
-
-  transition: opacity 500ms, transform 500ms;
-}
-
-.toast.visible {
-  z-index: 5;
-  transform: translateY(-282%);
-  opacity: 1;
-}
-
-.toast-body {
-  margin: 0px;
-  position: relative;
-  left: 50%;
-  transform: translate(-69%, 0px);
-  padding: 24px 24px;
-  font-size: 12px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: lightskyblue;
-  color: darkblue;
-  border-radius: 4px;
-  height: 97px;
-}
-#div_toast {
-  display: none;
-  width: -webkit-fill-available;
-  height: 818px;
-  position: fixed;
-  z-index: 4;
-  background: #0000009e;
-}
-#no {
-  background: aqua;
-  position: relative;
-  float: left;
-  bottom: 31px;
-  right: 7px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  color: red;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-}
-#no:hover {
-  background: aqua;
-  position: relative;
-  float: left;
-  bottom: 33px;
-  right: 7px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  font-weight: bold;
-}
-#yes {
-  background: aqua;
-  position: relative;
-  float: right;
-  bottom: 31px;
-  right: 86px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  color: var(--blue);
-}
-#yes:hover {
-  background: aqua;
-  position: relative;
-  float: right;
-  bottom: 33px;
-  right: 86px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  font-weight: bold;
-}
-// //////////////////////////////////////tost
-.toast2 {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-
-  transform: translateY(100%);
-  opacity: 0;
-
-  transition: opacity 500ms, transform 500ms;
-}
-
-.toast2.visible {
-  z-index: 5;
-  transform: translateY(-282%);
-  opacity: 1;
-}
-
-.toast-body2 {
-  margin: 0px;
-  position: relative;
-  left: 50%;
-  transform: translate(-74%, 0px);
-  padding: 24px 24px;
-  font-size: 12px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: lightskyblue;
-  color: darkblue;
-  border-radius: 4px;
-  height: 97px;
-}
-#div_toast2 {
-  display: none;
-  width: -webkit-fill-available;
-  height: 818px;
-  position: fixed;
-  z-index: 4;
-  background: #0000009e;
-}
-#no2 {
-  background: aqua;
-  position: relative;
-  float: left;
-  bottom: 31px;
-  right: 7px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  color: red;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-}
-#no2:hover {
-  background: aqua;
-  position: relative;
-  float: left;
-  bottom: 33px;
-  right: 7px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  font-weight: bold;
-}
-#yes2 {
-  background: aqua;
-  position: relative;
-  float: right;
-  bottom: 31px;
-  right: 86px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  color: var(--blue);
-}
-#yes2:hover {
-  background: aqua;
-  position: relative;
-  float: right;
-  bottom: 33px;
-  right: 86px;
-  cursor: pointer;
-  outline: none;
-  padding: 2px;
-  font-size: 13px;
-  border: 1px solid blue;
-  border-radius: 4px;
-  font-weight: bold;
-}
 #fa_microphone {
   position: relative;
   // left: 50px;

@@ -169,7 +169,7 @@
                       </option>
                     </select>
                   </div>
-                  <router-link :to="{ name: 'Home' }">
+                  <router-link :to="{ name: 'User' }">
                     <button
                       style="
                         --clr: #39ff14;

@@ -1,3 +1,352 @@
+
+<div id="show_following">
+  <div class="toast" id="toast">
+    <div class="toast-body"></div>
+    <button @click="no_bottons" id="no">NO</button>
+    <button id="yes">YES</button>
+  </div>
+  <div id="div_toast"></div>
+  <div id="div_search">
+    <font-awesome-icon
+      @click="icon_close"
+      id="icon_close"
+      icon="fa-solid fa-xmark"
+    />
+    <input id="input_search" type="search" placeholder="Username" />
+    <font-awesome-icon id="icon_search" icon="fa-solid fa-magnifying-glass" />
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button @click="followeds" id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+  <div
+    style="
+      width: 100%;
+      height: 100px;
+      background: #132020;
+      position: relative;
+      top: -48px;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 10px rgb(255 255 255 / 39%);
+    "
+  >
+    <img
+      id="following_person_image"
+      src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+      alt="peshawa"
+    />
+    <label id="following_person_name" for="">peshawa Othman Rashid</label>
+    <label id="following_person_language" for="">Language: Kurdy</label>
+    <label id="following_person_location" for="">Location: Kurdistan</label>
+    <button id="followed_button">Followed</button>
+    <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+  </div>
+</div>
+  <!-- followers //////////////////////////////-->
+  <!-- followers //////////////////////////////-->
+  <!-- followers //////////////////////////////-->
+  <div id="show_followers">
+    <div class="toast2" id="toast2">
+      <div class="toast-body2"></div>
+      <button @click="no_bottons2" id="no2">NO</button>
+      <button id="yes2">YES</button>
+    </div>
+    <div id="div_toast2"></div>
+    <div id="div_search">
+      <font-awesome-icon
+        @click="icon_close"
+        id="icon_close"
+        icon="fa-solid fa-xmark"
+      />
+      <input id="input_search" type="search" placeholder="Username" />
+      <font-awesome-icon id="icon_search" icon="fa-solid fa-magnifying-glass" />
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button @click="followers" id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+    <div
+      style="
+        width: 100%;
+        height: 100px;
+        background: #132020;
+        position: relative;
+        top: -48px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5),
+          0 0 10px rgb(255 255 255 / 39%);
+      "
+    >
+      <img
+        id="following_person_image"
+        src="https://demos.creative-tim.com/argon-dashboard/assets-old/img/theme/team-4.jpg"
+        alt="peshawa"
+      />
+      <label id="following_person_name" for="">peshawa Othman Rashid</label>
+      <label id="following_person_language" for="">Language: Kurdy</label>
+      <label id="following_person_location" for="">Location: Kurdistan</label>
+      <button id="followed_button">Following</button>
+      <!-- <hr style="background: aqua; position: relative; top: 60px" /> -->
+    </div>
+  </div>
+  <!-- Followers /////////////////////////////////////////////////////// -->
+  <!-- Followers /////////////////////////////////////////////////////// -->
+  <!-- Followers /////////////////////////////////////////////////////// -->
 <template>
   <div id="zoom_the_user_video">
     <img
