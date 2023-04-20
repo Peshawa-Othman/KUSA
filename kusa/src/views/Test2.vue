@@ -81,13 +81,9 @@
   </div>
   <div id="div_show_connection_room">
     <div id="div_video_room">
-      <div
-        v-for="(item, index) in test3"
-        :key="item"
-        :id="`the_container_video-${index}`"
-      >
-        <img id="image_person_number" :src="item.image" alt="person" />
-        <label id="label_name_person_room">{{ item.name }}</label>
+      <div id="the_container_video">
+        <img id="image_person_number" src="" alt="person" />
+        <label id="label_name_person_room"></label>
         <video
           id="info_video_person_number"
           autoplay
@@ -126,15 +122,56 @@
           icon="fa-solid fa-expand"
         />
       </div>
+      <div id="the_container_video">
+        <img id="image_person_number" src="" alt="person" />
+        <label id="label_name_person_room"></label>
+        <video
+          id="info_video_person_number2"
+          autoplay
+          playsinline
+          src=""
+        ></video>
+
+        <font-awesome-icon
+          @click="person_number_microphone(index)"
+          :id="`person_number_microphone-${index}`"
+          icon="fa-solid fa-microphone"
+        />
+        <font-awesome-icon
+          @click="person_number_microphone_close(index)"
+          :id="`person_number_microphone_close-${index}`"
+          icon="fa-solid fa-microphone-slash"
+        />
+        <font-awesome-icon
+          @click="person_number_video(index)"
+          :id="`person_number_video-${index}`"
+          icon="fa-solid fa-video"
+        />
+        <font-awesome-icon
+          @click="person_number_video_close(index)"
+          :id="`person_number_video_close-${index}`"
+          icon="fa-solid fa-video-slash"
+        />
+        <font-awesome-icon
+          @click="person_number_compress(index)"
+          :id="`person_number_compress-${index}`"
+          icon="fa-solid fa-compress"
+        />
+        <font-awesome-icon
+          @click="person_number_expand(index)"
+          :id="`person_number_expand-${index}`"
+          icon="fa-solid fa-expand"
+        />
+      </div>
     </div>
     <!-- <div v-for="item in test2" :key="item" id="div_person_data">
-      <span id="user_follow">Follow</span>
-      <img @click="user_image" id="user_image" :src="item.image" alt="" />
-      <span id="user_number">{{ item.number }}</span>
-      <div id="div_name">
-        <span id="user_name">{{ item.name }}</span>
-      </div>
-    </div> -->
+        <span id="user_follow">Follow</span>
+        <img @click="user_image" id="user_image" :src="item.image" alt="" />
+        <span id="user_number">{{ item.number }}</span>
+        <div id="div_name">
+          <span id="user_name">{{ item.name }}</span>
+        </div>
+      </div> -->
     <!-- <hr /> -->
     <br />
     <br />
@@ -277,29 +314,166 @@
 </template>
 
 <script>
+import AgoraRTM from "agora-rtm-sdk";
 export default {
-  setup() {
+  props: ["id"],
+  setup(props) {
+    let APP_ID = "5f65794758894bbe9587d0647847e740";
+
+    let token = null;
+
+    let client;
+    let channel;
+
+    let uid = String(Math.floor(Math.random() * 10000));
+
     let localStream;
     let remoteStream;
     let peerConnection;
+    const servers = {
+      lceServers: [
+        {
+          urls: [
+            "stun:stun1.1.google.com:19302",
+            "stun:stun2.1.google.com.19302",
+          ],
+        },
+      ],
+    };
     let init = async () => {
+      client = await AgoraRTM.createInstance(APP_ID);
+      await client.login({ uid, token });
+
+      channel = client.createChannel(props.id);
+      await channel.join();
+      channel.on("MemberJoined", handleuserjoined);
+      channel.on("MemberLeft", handleUserLeft);
+      client.on("MessageFromPeer", handleMessageFromPeer);
       localStream = await navigator.mediaDevices.getUserMedia({
         video: true,
         audio: true,
       });
       document.getElementById("info_video_person_number").srcObject =
         localStream;
-      createOffer();
     };
-    let createOffer = async () => {
-      peerConnection = new RTCPeerConnection();
+
+    let handleUserLeft = () => {
+      document.getElementById("info_video_person_number2").style.display =
+        "none";
+    };
+
+    let handleMessageFromPeer = async (message, MemberId) => {
+      message = JSON.parse(message.text);
+      if (message.type === "offer") {
+        createAnswer(MemberId, message.offer);
+      }
+      if (message.type === "answer") {
+        addAnswer(message.answer);
+      }
+      if (message.type === "candidate") {
+        if (peerConnection) {
+          peerConnection.addIceCandidate(message.candidate);
+        }
+      }
+    };
+
+    let handleuserjoined = async (MemberId) => {
+      console.log("A new user joined the channel", MemberId);
+      createOffer(MemberId);
+    };
+    let createPeerConnection = async (MemberId) => {
+      peerConnection = new RTCPeerConnection(servers);
       remoteStream = new MediaStream();
-      document.getElementById("info_video_person_number").srcObject =
+      document.getElementById("info_video_person_number2").srcObject =
         remoteStream;
+      document.getElementById("info_video_person_number2").style.display =
+        "block";
+      if (!localStream) {
+        localStream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true,
+        });
+        document.getElementById("info_video_person_number").srcObject =
+          localStream;
+      }
+
+      localStream.getTracks().forEach((track) => {
+        peerConnection.addTrack(track, localStream);
+      });
+
+      peerConnection.ontrack = (event) => {
+        event.streams[0].getTracks().forEach((track) => {
+          remoteStream.addTrack(track);
+        });
+      };
+      peerConnection.onicecandidate = async (event) => {
+        if (event.candidate) {
+          client.sendMessageToPeer(
+            {
+              text: JSON.stringify({
+                type: "candidate",
+                candidate: event.candidate,
+              }),
+            },
+            MemberId
+          );
+        }
+      };
+    };
+    let createOffer = async (MemberId) => {
+      await createPeerConnection(MemberId);
       let offer = await peerConnection.createOffer();
       await peerConnection.setLocalDescription(offer);
-      console.log("offer: ", offer);
+      client.sendMessageToPeer(
+        { text: JSON.stringify({ type: "offer", offer: offer }) },
+        MemberId
+      );
     };
+
+    let createAnswer = async (MemberId, offer) => {
+      await createPeerConnection(MemberId);
+
+      await peerConnection.setRemoteDescription(offer);
+      let answer = await peerConnection.createAnswer();
+      await peerConnection.setLocalDescription(answer);
+      client.sendMessageToPeer(
+        { text: JSON.stringify({ type: "answer", answer: answer }) },
+        MemberId
+      );
+    };
+    let addAnswer = async (answer) => {
+      if (!peerConnection.currentRemoteDescription) {
+        peerConnection.setRemoteDescription(answer);
+      }
+    };
+    let leaveChannel = async () => {
+      await channel.leave();
+      await client.logout();
+    };
+
+    let toggleCamera = async () => {
+      let videoTrack = localStream
+        .getTracks()
+        .find((track) => track.kind === "video");
+      if (videoTrack.enabled) {
+        videoTrack.enabled = false;
+      } else {
+        videoTrack.enabled = true;
+      }
+    };
+
+    let toggleMic = async () => {
+      let audioTrack = localStream
+        .getTracks()
+        .find((track) => track.kind === "audio");
+      if (audioTrack.enabled) {
+        audioTrack.enabled = false;
+      } else {
+        audioTrack.enabled = true;
+      }
+    };
+
+    window.addEventListener("beforeunload", leaveChannel);
     init();
     const test = [
       {
@@ -494,11 +668,13 @@ export default {
     ];
 
     function microphone_close() {
+      toggleMic();
       document.getElementById("fa-microphone-slash").style.display =
         "inline-table";
       document.getElementById("fa-microphone").style.display = "none";
     }
     function microphone_open() {
+      toggleMic();
       document.getElementById("fa-microphone-slash").style.display = "none";
       document.getElementById("fa-microphone").style.display = "inline-table";
     }
@@ -612,11 +788,13 @@ export default {
       document.getElementById("zoom_the_user_video").style.display = "none";
     }
     function fa_compress_camera() {
+      toggleCamera();
       document.getElementById("fa_compress_camera").style.display = "none";
       document.getElementById("fa_expand_camera").style.display =
         "inline-table";
     }
     function fa_expand_camera() {
+      toggleCamera();
       document.getElementById("fa_expand_camera").style.display = "none";
       document.getElementById("fa_compress_camera").style.display =
         "inline-table";
@@ -1011,7 +1189,7 @@ hr {
   border-radius: 35px;
 }
 #fa-microphone {
-  display: none;
+  display: inline-table;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1024,7 +1202,7 @@ hr {
   border-radius: 35px;
 }
 #fa-microphone-slash {
-  display: inline-table;
+  display: none;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1037,7 +1215,7 @@ hr {
   border-radius: 35px;
 }
 #fa_compress_camera {
-  display: none;
+  display: inline-table;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1050,7 +1228,7 @@ hr {
   border-radius: 35px;
 }
 #fa_expand_camera {
-  display: inline-table;
+  display: none;
   width: 23px;
   position: relative;
   padding: 15px;
@@ -1306,6 +1484,13 @@ hr {
   border: 1px solid;
 }
 #info_video_person_number {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border: 1px solid red;
+}
+#info_video_person_number2 {
+  display: none;
   position: relative;
   width: inherit;
   height: inherit;
@@ -1650,7 +1835,7 @@ hr {
     border-radius: 35px;
   }
   #fa_compress_camera {
-    display: none;
+    display: inline-table;
     width: 14px;
     position: relative;
     padding: 12px;
@@ -1663,7 +1848,7 @@ hr {
     border-radius: 35px;
   }
   #fa_expand_camera {
-    display: inline-table;
+    display: none;
     width: 14px;
     position: relative;
     padding: 12px;

@@ -81,97 +81,55 @@
   </div>
   <div id="div_show_connection_room">
     <div id="div_video_room">
-      <div id="the_container_video">
-        <img id="image_person_number" src="" alt="person" />
-        <label id="label_name_person_room"></label>
+      <div id="the_container_video1">
+        <!-- <img id="image_person_number1" src="" alt="person" />
+        <label id="label_name_person_room1"></label> -->
         <video
-          id="info_video_person_number"
+          id="info_video_person_number1"
           autoplay
           playsinline
           src=""
         ></video>
-
-        <font-awesome-icon
-          @click="person_number_microphone(index)"
-          :id="`person_number_microphone-${index}`"
-          icon="fa-solid fa-microphone"
-        />
-        <font-awesome-icon
-          @click="person_number_microphone_close(index)"
-          :id="`person_number_microphone_close-${index}`"
-          icon="fa-solid fa-microphone-slash"
-        />
-        <font-awesome-icon
-          @click="person_number_video(index)"
-          :id="`person_number_video-${index}`"
-          icon="fa-solid fa-video"
-        />
-        <font-awesome-icon
-          @click="person_number_video_close(index)"
-          :id="`person_number_video_close-${index}`"
-          icon="fa-solid fa-video-slash"
-        />
-        <font-awesome-icon
-          @click="person_number_compress(index)"
-          :id="`person_number_compress-${index}`"
-          icon="fa-solid fa-compress"
-        />
-        <font-awesome-icon
-          @click="person_number_expand(index)"
-          :id="`person_number_expand-${index}`"
-          icon="fa-solid fa-expand"
-        />
       </div>
-      <div id="the_container_video">
-        <img id="image_person_number" src="" alt="person" />
-        <label id="label_name_person_room"></label>
+      <div id="the_container_video2">
+        <!-- <img id="image_person_number2" src="" alt="person" />
+        <label id="label_name_person_room2"></label> -->
         <video
           id="info_video_person_number2"
           autoplay
           playsinline
           src=""
         ></video>
-
-        <font-awesome-icon
-          @click="person_number_microphone(index)"
-          :id="`person_number_microphone-${index}`"
-          icon="fa-solid fa-microphone"
-        />
-        <font-awesome-icon
-          @click="person_number_microphone_close(index)"
-          :id="`person_number_microphone_close-${index}`"
-          icon="fa-solid fa-microphone-slash"
-        />
-        <font-awesome-icon
-          @click="person_number_video(index)"
-          :id="`person_number_video-${index}`"
-          icon="fa-solid fa-video"
-        />
-        <font-awesome-icon
-          @click="person_number_video_close(index)"
-          :id="`person_number_video_close-${index}`"
-          icon="fa-solid fa-video-slash"
-        />
-        <font-awesome-icon
-          @click="person_number_compress(index)"
-          :id="`person_number_compress-${index}`"
-          icon="fa-solid fa-compress"
-        />
-        <font-awesome-icon
-          @click="person_number_expand(index)"
-          :id="`person_number_expand-${index}`"
-          icon="fa-solid fa-expand"
-        />
+      </div>
+      <div id="the_container_video3">
+        <!-- <img id="image_person_number3" src="" alt="person" />
+        <label id="label_name_person_room3"></label> -->
+        <video
+          id="info_video_person_number3"
+          autoplay
+          playsinline
+          src=""
+        ></video>
+      </div>
+      <div id="the_container_video4">
+        <!-- <img id="image_person_number4" src="" alt="person" />
+        <label id="label_name_person_room4"></label> -->
+        <video
+          id="info_video_person_number4"
+          autoplay
+          playsinline
+          src=""
+        ></video>
       </div>
     </div>
     <!-- <div v-for="item in test2" :key="item" id="div_person_data">
-      <span id="user_follow">Follow</span>
-      <img @click="user_image" id="user_image" :src="item.image" alt="" />
-      <span id="user_number">{{ item.number }}</span>
-      <div id="div_name">
-        <span id="user_name">{{ item.name }}</span>
-      </div>
-    </div> -->
+        <span id="user_follow">Follow</span>
+        <img @click="user_image" id="user_image" :src="item.image" alt="" />
+        <span id="user_number">{{ item.number }}</span>
+        <div id="div_name">
+          <span id="user_name">{{ item.name }}</span>
+        </div>
+      </div> -->
     <!-- <hr /> -->
     <br />
     <br />
@@ -353,7 +311,7 @@ export default {
         video: true,
         audio: true,
       });
-      document.getElementById("info_video_person_number").srcObject =
+      document.getElementById("info_video_person_number1").srcObject =
         localStream;
     };
 
@@ -393,7 +351,7 @@ export default {
           video: true,
           audio: true,
         });
-        document.getElementById("info_video_person_number").srcObject =
+        document.getElementById("info_video_person_number1").srcObject =
           localStream;
       }
 
@@ -1476,20 +1434,55 @@ hr {
   display: inline-table;
   margin-top: 0px;
 }
-[id^="the_container_video-"] {
+#the_container_video1 {
   position: relative;
   display: inline-table;
   width: 500px;
   height: 300px;
   border: 1px solid;
 }
-#info_video_person_number {
+#the_container_video2 {
+  position: relative;
+  display: inline-table;
+  width: 500px;
+  height: 300px;
+  border: 1px solid;
+}
+#the_container_video3 {
+  position: relative;
+  display: inline-table;
+  width: 500px;
+  height: 300px;
+  border: 1px solid;
+}
+#the_container_video4 {
+  position: relative;
+  display: inline-table;
+  width: 500px;
+  height: 300px;
+  border: 1px solid;
+}
+#info_video_person_number1 {
   position: relative;
   width: inherit;
   height: inherit;
   border: 1px solid red;
 }
 #info_video_person_number2 {
+  display: none;
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border: 1px solid red;
+}
+#info_video_person_number3 {
+  display: none;
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border: 1px solid red;
+}
+#info_video_person_number4 {
   display: none;
   position: relative;
   width: inherit;
@@ -1571,7 +1564,28 @@ hr {
 }
 
 @media (max-width: 1055px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 400px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 400px;
@@ -1589,7 +1603,28 @@ hr {
   }
 }
 @media (max-width: 880px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 300px;
@@ -1650,7 +1685,28 @@ hr {
   }
 }
 @media (max-width: 660px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 249px;
+    height: 224px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 249px;
+    height: 224px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 249px;
+    height: 224px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 249px;
@@ -1678,7 +1734,28 @@ hr {
   }
 }
 @media (max-width: 550px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 200px;
@@ -1741,7 +1818,28 @@ hr {
 }
 ////////////////////////////////////////////////////////////@at-root
 @media (max-width: 500px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 218px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 218px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 218px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 218px;
@@ -2024,7 +2122,28 @@ hr {
   }
 }
 @media (max-width: 473px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 199px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 199px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 199px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 199px;
@@ -2033,7 +2152,28 @@ hr {
   }
 }
 @media (max-width: 434px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 175px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 175px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 175px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 175px;
@@ -2043,7 +2183,28 @@ hr {
 }
 
 @media (max-width: 388px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 155px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 155px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 155px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 155px;
@@ -2104,7 +2265,28 @@ hr {
   }
 }
 @media (max-width: 349px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 130px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 130px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 130px;
+    height: 208px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 130px;
@@ -2122,7 +2304,28 @@ hr {
   }
 }
 @media (max-width: 297px) {
-  [id^="the_container_video-"] {
+  #the_container_video1 {
+    position: relative;
+    display: inline-table;
+    width: 115px;
+    height: 195px;
+    border: 1px solid;
+  }
+  #the_container_video2 {
+    position: relative;
+    display: inline-table;
+    width: 115px;
+    height: 195px;
+    border: 1px solid;
+  }
+  #the_container_video3 {
+    position: relative;
+    display: inline-table;
+    width: 115px;
+    height: 195px;
+    border: 1px solid;
+  }
+  #the_container_video4 {
     position: relative;
     display: inline-table;
     width: 115px;
